@@ -1,0 +1,32 @@
+/* ---------- Document level adjustments ----------*/
+
+/* ---------- Variables ---------- */
+
+:root {
+  /* ---------- Fonts ---------- */
+  --copy: 300 1rem/1.2 "Rubik", sans-serif;
+  --nav: 1.5rem "Rubik", sans-serif;
+  --h1: 2.2rem "Oswald", sans-serif;
+  --h2: 2rem "Oswald", sans-serif;
+  --cta: 1.5rem "Oswald", sans-serif;
+  --alt: 1.25 small-caps "Oswald", sans-serif;
+  --link: 600 1rem "Rubik", sans-serif;
+
+  /* ---------- Colours ---------- */
+  --white: #fff;
+  --base: #121315;
+  --primary: #44505d;
+  --focus: #005996;
+  --shade: #4f87ad;
+  --decor: #e2e5e7;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
