@@ -25,3 +25,9 @@
     margin: 0 auto;
   }
 }
+
+@media only screen and (min-width: 1300px) {
+  .intro-hero-section {
+    max-width: 100%;
+  }
+}
