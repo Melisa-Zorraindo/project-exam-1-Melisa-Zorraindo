@@ -1,11 +1,9 @@
-/* ---------- Document level adjustments ----------*/
-
 /* ---------- Variables ---------- */
 
 :root {
   /* ---------- Fonts ---------- */
   --copy: 300 1rem/1.2 "Rubik", sans-serif;
-  --nav: 1.5rem "Rubik", sans-serif;
+  --nav: 1.2rem "Rubik", sans-serif;
   --h1: 2.2rem "Oswald", sans-serif;
   --h2: 2rem "Oswald", sans-serif;
   --cta: 1.5rem "Oswald", sans-serif;
@@ -21,6 +19,8 @@
   --decor: #e2e5e7;
 }
 
+/* ---------- Document level adjustments ----------*/
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -28,5 +28,70 @@ html {
 
 body {
   margin: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+/* ---------- Navigation ----------*/
+
+.logo-box {
+  text-align: center;
+}
+
+.logo {
+  max-width: 180px;
+  padding: 0.5rem;
+}
+
+.nav-menu-box {
+  text-align: center;
+}
+
+.nav-menu {
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+nav {
+  background-color: var(--decor);
+  position: absolute;
+  width: 100%;
+  transform: translateY(-200%);
+  transition: transform 1s ease;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  font: var(--nav);
+  color: var(--base);
+}
+
+nav a:hover {
+  background-color: var(--focus);
+  color: var(--white);
+}
+
+.active {
+  background-color: var(--focus);
+  color: var(--white);
+}
+
+/* ---------- Hero section ---------- */
+
+.intro-hero-section {
+  background-image: url(/assets/images/chase-kinney-FMQBLyhD2HU-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+
+  height: 300px;
 }
