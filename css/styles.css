@@ -2,13 +2,13 @@
 
 :root {
   /* ---------- Fonts ---------- */
-  --copy: 300 1rem/1.2 "Rubik", sans-serif;
-  --nav: 1.2rem "Rubik", sans-serif;
+  --copy: 1rem/1.2 "Noto Sans", sans-serif;
+  --nav: small-caps 500 1.2rem "Noto Sans", sans-serif;
   --h1: 2.2rem "Oswald", sans-serif;
   --h2: 2rem "Oswald", sans-serif;
   --cta: 1.5rem "Oswald", sans-serif;
-  --alt: 1.25 small-caps "Oswald", sans-serif;
-  --link: 600 1rem "Rubik", sans-serif;
+  --alt: small-caps 1.25 "Oswald", sans-serif;
+  --link: 500 1rem "Noto Sans", sans-serif;
 
   /* ---------- Colours ---------- */
   --white: #fff;
@@ -24,11 +24,43 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  font: var(--copy);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   /* box-sizing: border-box; */
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1 {
+  font: var(--h1);
+  color: var(--base);
+  background-color: var(--decor);
+  margin: 0;
+  padding: 0 1rem;
+}
+
+p {
+  color: var(--base);
+  background-color: var(--decor);
+  margin: 0;
+  padding: 0.25rem 1rem;
+}
+
+footer {
+  background-color: var(--decor);
+  color: var(--base);
+  text-align: center;
+  padding: 0.75rem;
+  flex-shrink: 0;
 }
 
 /* ---------- Navigation ----------*/
@@ -38,8 +70,9 @@ body {
 }
 
 .logo {
-  max-width: 180px;
-  padding: 0.5rem;
+  width: 160px;
+  height: 35px;
+  padding: 1rem 0;
 }
 
 .nav-menu-box {
@@ -55,6 +88,7 @@ body {
 
 nav {
   background-color: var(--decor);
+  border-bottom: 2px solid var(--primary);
   position: absolute;
   width: 100%;
   transform: translateY(-200%);
@@ -89,9 +123,13 @@ nav a:hover {
 /* ---------- Hero section ---------- */
 
 .intro-hero-section {
-  background-image: url(/assets/images/chase-kinney-FMQBLyhD2HU-unsplash.jpg);
+  background-image: url(/assets/images/quan-le-B_swNGkjLBs-unsplash.jpg);
   background-size: cover;
   background-position: center;
-
   height: 300px;
+  max-width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
