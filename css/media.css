@@ -27,7 +27,12 @@
 }
 
 @media only screen and (min-width: 1300px) {
+  /*consider making one class for the two following*/
   .intro-hero-section {
     max-width: 100%;
   }
+
+  /*   .featured-img {
+    max-width: 100%;
+  } */
 }

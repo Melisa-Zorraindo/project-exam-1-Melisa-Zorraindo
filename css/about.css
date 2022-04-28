@@ -1,0 +1,29 @@
+h1 {
+  font: var(--alt);
+  margin: 3rem 1rem 0;
+  color: var(--focus);
+}
+
+h2 {
+  font: var(--h1);
+  color: var(--base);
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+p {
+  margin: 1rem;
+  color: var(--base);
+}
+
+.quote {
+  font: var(--h2);
+  color: var(--base);
+}
+
+.featured-img {
+  max-width: 95%;
+  display: block;
+  margin: auto;
+}

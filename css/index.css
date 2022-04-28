@@ -1,0 +1,17 @@
+h1,
+h2 {
+  font: var(--h1);
+  color: var(--base);
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+h2 {
+  font: var(--h2);
+}
+
+p {
+  font: var(--copy);
+  color: var(--base);
+  margin: 1rem;
+}
