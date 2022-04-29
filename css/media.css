@@ -20,9 +20,19 @@
     max-width: 1600px;
   }
 
-  main {
+  .main-content {
     max-width: 1600px;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 816px) and (max-width: 936px) {
+  .tdee-calculator {
+    flex: 0 0 380px;
+  }
+
+  .rpe-calculator {
+    flex: 0 0 380px;
   }
 }
 

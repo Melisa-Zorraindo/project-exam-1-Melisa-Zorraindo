@@ -15,6 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/calculators.css" rel="stylesheet"/>
     <link href="/css/media.css" rel="stylesheet" />
     <link rel="icon" href="/assets/images/favicon.png" />
     <title>FitFactory | Calculators</title>
@@ -52,7 +53,71 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="main-content-calculators-page">
+      <div class="calculator-box tdee-calculator">
+        <h1>calculate your tdee</h1>
+        <h2>
+          How much should I be eating?
+        </h2>
+        <div>
+          <span class="field-heading">system</span>
+          <label for="metric">Metric</label>
+          <input type="radio" id="metric" value="metric" name="system" checked/>
+          <label for="imperial">Imperial</label>
+          <input type="radio" id="imperial" value="imperial" name="system" />
+        </div>
+        <select name="gender" id="gender-select" />
+          <option value="">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <input class="number-value" id="age" value="" placeholder="Age">
+        <input class="number-value" id="body-weight" value="" placeholder="Weight in KG">
+        <input class="number-value" id="height" value="" placeholder="Height in CM">
+        <select name="activity-level" id="activity-select" />
+          <option value="">Select activity level</option>
+          <option value="sedentary">Sedentary (office job)</option>
+          <option value="light">Light exercise (1/2 days a week)</option>
+          <option value="moderate">Moderate exercise (3/5 days a week)</option>
+          <option value="heavy">Heavy exercise (6/7 days a week)</option>
+        </select>
+        <div class="results">
+          <div>
+            <span>calories:</span>
+          </div>
+          <div class="macros">
+            <span>protein:</span>
+            <span>carbs:</span>
+            <span>fats:</span>
+          </div>
+        </div>
+        <button class="cta">calculate</button>
+      </div>
+      <div class="calculator-box rpe-calculator">
+        <h1>calculate your rpe</h1>
+        <h2>
+          How much can I lift?
+        </h2>
+        <div class="rpe-box">
+        <div class="lift-values">
+          <span class="field-heading">i lifted</span>
+          <input class="number-value" type="text" value="" id="lift-weight" placeholder="Weight">
+          <input class="number-value" type="text" value="" id="performed-reps" placeholder="Reps">
+          <input class="number-value" type="text" value="" id="reached-rpe" placeholder="RPE">
+          <span class="field-heading">est 1rm:</span>
+        </div>
+        <div class="lift-values">
+        <span class="field-heading">i want to lift</span>
+        <input class="number-value" type="text" value="" id="desired-reps" placeholder="Reps">
+        <input class="number-value" type="text" value="" id="desired-rpe" placeholder="RPE">
+        <span class="field-heading">weight:</span>
+       </div>
+      </div>
+        <button class="cta">calculate</button>
+      </div>
+    </div>
+    </main>
     <footer>&copy; Melisa Zorraindo | Copyright 2022</footer>
     <script src="/js/functions/navMenu.js"></script>
   </body>

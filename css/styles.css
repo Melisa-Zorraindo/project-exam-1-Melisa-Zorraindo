@@ -6,8 +6,9 @@
   --nav: small-caps 500 1.2rem "Noto Sans", sans-serif;
   --h1: 2.2rem "Oswald", sans-serif;
   --h2: 2rem "Oswald", sans-serif;
-  --cta: 1.5rem "Oswald", sans-serif;
-  --alt: small-caps 1.6rem "Oswald", sans-serif;
+  --cta: small-caps 1.35rem "Oswald", sans-serif;
+  --sub: small-caps 1.6rem "Oswald", sans-serif;
+  --alt: small-caps 1.2rem "Oswald", sans-serif;
   --link: 500 1rem "Noto Sans", sans-serif;
 
   /* ---------- Colours ---------- */
@@ -117,14 +118,12 @@ nav a:hover {
   margin: auto;
 }
 
-/* .intro-hero-section {
-  background-image: url(/assets/images/quan-le-B_swNGkjLBs-unsplash.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  max-width: 80%;
-  margin: 2rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-} */
+/* ---------- Buttons ---------- */
+.cta {
+  font: var(--cta);
+  background-color: var(--focus);
+  color: var(--white);
+  border: none;
+  box-shadow: -3px 3px 6px var(--shade);
+  margin: 3rem 1rem;
+}

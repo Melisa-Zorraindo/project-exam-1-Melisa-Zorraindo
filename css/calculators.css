@@ -1,0 +1,76 @@
+.main-content-calculators-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h1 {
+  font: var(--sub);
+  margin: 3rem 1rem 0;
+  color: var(--focus);
+}
+
+h2 {
+  font: var(--h1);
+  color: var(--base);
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.calculator-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.tdee-calculator {
+  flex: 0 0 auto;
+}
+
+.rpe-calculator {
+  flex: 0 0 400px;
+}
+
+.field-heading {
+  font: var(--alt);
+  color: var(--focus);
+  margin-left: 1rem;
+}
+
+select {
+  max-width: fit-content;
+  height: 2rem;
+  margin: 1rem;
+}
+
+.number-value {
+  width: 5rem;
+  height: 2rem;
+  margin: 0.5rem 1rem;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  font: var(--alt);
+  color: var(--focus);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.macros {
+  display: flex;
+  flex-direction: column;
+}
+
+.rpe-box {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.lift-values {
+  display: flex;
+  flex-direction: column;
+}
