@@ -12,14 +12,10 @@ h2 {
   margin-right: 1rem;
 }
 
-p {
-  margin: 1rem;
-  color: var(--base);
-}
-
 .quote {
   font: var(--h2);
   color: var(--base);
+  margin-top: 3rem;
 }
 
 .featured-img {

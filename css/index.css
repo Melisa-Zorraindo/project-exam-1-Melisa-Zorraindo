@@ -1,17 +1,39 @@
-h1,
-h2 {
+h1 {
   font: var(--h1);
   color: var(--base);
-  margin-top: 3rem;
-  margin-left: 1rem;
 }
 
 h2 {
   font: var(--h2);
+  color: var(--base);
 }
 
-p {
-  font: var(--copy);
-  color: var(--base);
-  margin: 1rem;
+.slider {
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 3rem;
+  gap: 1rem;
+}
+
+.slider-arrow {
+  font-size: 2.5rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+.slider-cards-box {
+  display: flex;
+}
+
+.slider-card {
+  border: 1px solid var(--base);
+}
+
+.slider-img {
+  width: 100%;
+}
+
+.slider-paragraph {
+  margin-left: 1rem;
 }

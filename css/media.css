@@ -1,9 +1,3 @@
-@media only screen and (max-width: 365px) {
-  .intro-hero-section {
-    max-width: 95%;
-  }
-}
-
 @media only screen and (min-width: 700px) {
   .nav-menu {
     display: none;
@@ -36,13 +30,22 @@
   }
 }
 
-@media only screen and (min-width: 1300px) {
-  /*consider making one class for the two following*/
-  .intro-hero-section {
-    max-width: 100%;
+@media only screen and (min-width: 1200px) {
+  h1,
+  h2 {
+    margin-left: 3rem;
   }
 
-  /*   .featured-img {
-    max-width: 100%;
-  } */
+  p {
+    margin: 1rem 3rem;
+  }
+
+  .featured-img {
+    max-width: 93%;
+  }
+
+  .slider {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 }

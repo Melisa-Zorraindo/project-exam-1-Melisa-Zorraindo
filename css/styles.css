@@ -6,9 +6,10 @@
   --nav: small-caps 500 1.2rem "Noto Sans", sans-serif;
   --h1: 2.2rem "Oswald", sans-serif;
   --h2: 2rem "Oswald", sans-serif;
+  --h3: 1.5rem "Oswald", sans-serif;
   --cta: small-caps 1.35rem "Oswald", sans-serif;
   --sub: small-caps 1.6rem "Oswald", sans-serif;
-  --alt: small-caps 1.2rem "Oswald", sans-serif;
+  --alt: small-caps 1.3rem "Oswald", sans-serif;
   --link: 500 1rem "Noto Sans", sans-serif;
 
   /* ---------- Colours ---------- */
@@ -47,6 +48,7 @@ footer {
   text-align: center;
   padding: 0.75rem;
   flex-shrink: 0;
+  margin-top: 3rem;
 }
 
 /* ---------- Navigation ----------*/
@@ -104,6 +106,30 @@ nav a:hover {
 .active {
   background-color: var(--focus);
   color: var(--white);
+}
+
+/* ---------- Headings & Copy ---------- */
+h1,
+h2 {
+  margin-top: 3rem;
+  margin-left: 2rem;
+}
+
+h3 {
+  font: var(--h3);
+  margin: 1rem;
+}
+
+p {
+  font: var(--copy);
+  color: var(--base);
+  margin: 1rem 2rem;
+}
+
+.tags {
+  font: var(--alt);
+  color: var(--focus);
+  margin-left: 1rem;
 }
 
 /* ---------- Featured section ---------- */
