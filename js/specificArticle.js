@@ -1,4 +1,5 @@
 const articleContainer = document.querySelector(".main-content");
+const newTitle = document.querySelector("title");
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
 const id = param.get("id");
@@ -20,6 +21,8 @@ async function getArticle() {
 getArticle();
 
 function renderHTML(data) {
+  //update title
+  newTitle.innerHTML = `FitFactory | ${data.title.rendered}`;
   articleContainer.innerHTML = `<article>
                                     <h1>${data.acf.subtitle}</h1>
                                     <h2>${data.title.rendered}</h2>
