@@ -12,10 +12,23 @@
   margin-left: 1rem;
 }
 
+.ft-post-box {
+  text-decoration: none;
+  color: var(--base);
+}
+
 .post-card h2,
 .ft-post-box h2 {
   margin-left: 1rem;
   margin-top: 0;
+}
+
+.post-card a h2 {
+  color: var(--base);
+}
+
+.post-card a {
+  text-decoration: none;
 }
 
 .ft-post-box p {

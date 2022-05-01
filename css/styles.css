@@ -126,6 +126,11 @@ p {
   margin: 1rem 2rem;
 }
 
+a {
+  font: var(--link);
+  color: var(--focus);
+}
+
 .tags {
   font: var(--alt);
   color: var(--focus);
