@@ -1,3 +1,13 @@
+@media only screen and (max-width: 320px) {
+  .ft-post-img {
+    width: 150px;
+    height: 150px;
+  }
+  .post-img {
+    width: 150px;
+  }
+}
+
 @media only screen and (min-width: 700px) {
   .nav-menu {
     display: none;
@@ -18,6 +28,12 @@
     max-width: 1600px;
     margin: 0 auto;
   }
+
+  /* ---------- List of articles ---------- */
+  .ft-post-box {
+    display: flex;
+    flex: 0 0 100%;
+  }
 }
 
 @media only screen and (min-width: 816px) and (max-width: 936px) {
@@ -27,6 +43,18 @@
 
   .rpe-calculator {
     flex: 0 0 380px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  /* ---------- List of articles ---------- */
+  .ft-post-img {
+    width: 600px;
+    height: 300px;
+  }
+
+  .ft-post-box p {
+    max-width: 450px;
   }
 }
 
@@ -44,7 +72,14 @@
     max-width: 93%;
   }
 
+  /* ---------- Homepage ---------- */
   .slider {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  /* ---------- List of articles ---------- */
+  .article-box {
     margin-left: 3rem;
     margin-right: 3rem;
   }
