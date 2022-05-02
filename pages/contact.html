@@ -59,27 +59,23 @@
         <h2>Get in touch with me</h2>
         <form action="">
           <span>name</span>
-          <label for="name-field" id="name"
-            >Must be more than five characters long</label
-          >
+          <label id="name-warning">Must be more than five characters long</label>
           <input class="field" type="text" id="name-field" />
           <span>email</span>
-          <label for="email-field" id="email"
-            >Must be a valid email address</label
-          >
+          <label id="email-warning">Must be a valid email address</label>
           <input class="field" type="text" id="email-field" />
           <span>subject</span>
-          <label for="subject-field" id="subject"
-            >Must be more than 15 characters long</label
-          >
+          <label id="subject-warning">Must be more than 15 characters long</label>
           <input class="field" type="text" id="subject-field" />
-          <label for="message-field" id="message"><span>message</span></label>
-          <textarea></textarea>
-          <input class="cta" type="submit" value="submit" />
+          <span>message</span>
+          <label id="message-warning">Must be more than 25 characters long</label>
+          <textarea id="message"></textarea>
+          <button class="cta" type="submit"/>submit</button>
         </form>
       </div>
     </main>
     <footer>&copy; Melisa Zorraindo | Copyright 2022</footer>
     <script src="/js/functions/navMenu.js"></script>
+    <script src="/js/contact.js"></script>
   </body>
 </html>

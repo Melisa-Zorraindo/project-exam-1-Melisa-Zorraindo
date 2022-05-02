@@ -47,3 +47,7 @@ textarea,
   width: 100%;
   margin-left: 0;
 }
+
+.warning {
+  color: red;
+}
