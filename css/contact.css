@@ -11,9 +11,7 @@ h1 {
 h2 {
   font: var(--heading);
   color: var(--base);
-  margin-top: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0 1rem 2rem;
 }
 
 form {
@@ -32,23 +30,17 @@ label {
   font-size: 0.9rem;
 }
 
-textarea {
+textarea,
+.field {
   display: block;
   width: 100%;
-  /* width: 21rem; media queries */
   height: 4rem;
-  border: 1px solid var(--base);
-  opacity: 0.5;
+  border: 1px solid grey;
   padding: 0;
 }
 
 .field {
-  width: 100%;
-  /* width: 21rem; media queries */
   height: 2rem;
-  border: 1px solid var(--base);
-  opacity: 0.5;
-  padding: 0;
 }
 
 .cta {

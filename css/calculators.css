@@ -13,9 +13,7 @@ h1 {
 h2 {
   font: var(--heading);
   color: var(--base);
-  margin-top: 0;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 0 1rem 2rem;
 }
 
 .calculator-box {
