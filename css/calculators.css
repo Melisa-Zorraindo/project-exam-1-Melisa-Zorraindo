@@ -5,13 +5,13 @@
 }
 
 h1 {
-  font: var(--sub);
+  font: var(--subheading);
   margin: 3rem 1rem 0;
   color: var(--focus);
 }
 
 h2 {
-  font: var(--h1);
+  font: var(--heading);
   color: var(--base);
   margin-top: 0;
   margin-left: 1rem;

@@ -1,0 +1,57 @@
+body {
+  box-sizing: border-box;
+}
+
+h1 {
+  font: var(--subheading);
+  margin: 3rem 1rem 0;
+  color: var(--focus);
+}
+
+h2 {
+  font: var(--heading);
+  color: var(--base);
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+form {
+  width: 85%;
+  margin: 0 1rem;
+}
+
+span {
+  font: var(--alt);
+  color: var(--focus);
+  display: block;
+  margin-top: 1rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  /* width: 21rem; media queries */
+  height: 4rem;
+  border: 1px solid var(--base);
+  opacity: 0.5;
+  padding: 0;
+}
+
+.field {
+  width: 100%;
+  /* width: 21rem; media queries */
+  height: 2rem;
+  border: 1px solid var(--base);
+  opacity: 0.5;
+  padding: 0;
+}
+
+.cta {
+  width: 100%;
+  margin-left: 0;
+}

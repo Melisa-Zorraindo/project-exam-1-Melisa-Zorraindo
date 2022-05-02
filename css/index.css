@@ -1,5 +1,5 @@
 h1 {
-  font: var(--h1);
+  font: var(--heading);
   color: var(--base);
 }
 
