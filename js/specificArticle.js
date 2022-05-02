@@ -3,7 +3,7 @@ const newTitle = document.querySelector("title");
 const queryString = document.location.search;
 const param = new URLSearchParams(queryString);
 const id = param.get("id");
-const url = `https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?include=${id}&acf_format=standard/`;
+const url = `https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?include=${id}&acf_format=standard`;
 
 console.log(url);
 
