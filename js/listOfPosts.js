@@ -28,6 +28,8 @@ loadMoreBtn.addEventListener("click", () => {
 fetchPosts();
 
 function createHTML(data) {
+  content.innerHTML = "";
+
   for (let i = 0; i < data.length; i++) {
     if (i === 0) {
       content.innerHTML = `<article>

@@ -39,6 +39,10 @@
     max-width: 400px;
   }
 
+  .ft-tags-layout {
+    margin-top: 0;
+  }
+
   /* ---------- Contact ---------- */
   form {
     width: 400px;
@@ -57,7 +61,8 @@
 
 @media only screen and (min-width: 1000px) {
   /* ---------- List of articles ---------- */
-  .ft-post-img {
+  .ft-post-img,
+  .ft-img-layout {
     width: 600px;
     height: 300px;
   }
@@ -90,7 +95,8 @@
   }
 
   /* ---------- List of articles ---------- */
-  .article-box {
+  .article-box,
+  .flex-layout {
     margin-left: 3rem;
     margin-right: 3rem;
   }

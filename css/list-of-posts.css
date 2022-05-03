@@ -46,3 +46,35 @@
   padding: 0.5rem 5rem;
   margin: 3rem auto;
 }
+
+/* ---------- While loading ---------- */
+
+.ft-img-layout,
+.post-img-layout {
+  background-color: var(--decor);
+  width: 300px;
+  height: 150px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.flex-layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags-layout-box {
+  display: flex;
+}
+
+.ft-tags-layout,
+.tags-layout {
+  background-color: var(--decor);
+  width: 75px;
+  height: 25px;
+  margin: 1rem;
+}
+
+.post-img-layout {
+  margin-top: 3rem;
+}
