@@ -14,29 +14,21 @@ function validateForm(event) {
   if (checkLengths(name.value, 6)) {
     name.previousElementSibling.classList.add("warning");
     return false;
-  } else {
-    name.previousElementSibling.classList.remove("warning");
   }
 
   if (!checkEmail(email.value)) {
     email.previousElementSibling.classList.add("warning");
     return false;
-  } else {
-    email.previousElementSibling.classList.remove("warning");
   }
 
   if (checkLengths(subject.value, 16)) {
     subject.previousElementSibling.classList.add("warning");
     return false;
-  } else {
-    subject.previousElementSibling.classList.remove("warning");
   }
 
   if (checkLengths(message.value, 26)) {
     message.previousElementSibling.classList.add("warning");
     return false;
-  } else {
-    message.previousElementSibling.classList.remove("warning");
   }
 
   if (checkLengths && checkEmail) {
