@@ -4,6 +4,9 @@ const email = document.querySelector("#email-field");
 const subject = document.querySelector("#subject-field");
 const message = document.querySelector("#message");
 const submitBtn = document.querySelector(".cta");
+const headingOne = document.querySelector("h1");
+const headingTwo = document.querySelector("h2");
+const successMessage = document.querySelector(".success-message");
 
 function validateForm(event) {
   event.preventDefault();
@@ -68,8 +71,13 @@ subject.addEventListener("keyup", () => {
 });
 
 function submitForm() {
-  alert("Your message has been sent");
-  form.reset();
+  const userName = name.value;
+  headingOne.style.display = "none";
+  headingTwo.style.display = "none";
+  form.style.display = "none";
+  successMessage.innerHTML = `<p>Thank you, ${userName}.</p>
+                                <p>Your message has been sent</p>
+                                <a href="https://fitfactory-noroff-project.netlify.app/pages/contact.html"<i class="fas fa-caret-square-left"></i></a>`;
 }
 
 function checkLengths(val, len) {
