@@ -1,7 +1,7 @@
 //select elements in the dom
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
-let track = document.querySelector(".track");
+const track = document.querySelector(".track");
 let carouselWidth = document.querySelector(".carousel-container").offsetWidth;
 
 let index = 0;
@@ -28,7 +28,7 @@ function createHTML(data) {
     track.innerHTML += `
     <div class="card-container">
                 <a class="card" href="#">
-                  <div class="img"></div>
+                  <div class="img" style="background-image:url('${post.acf.featured_img}')"></div>
                   <div>
                     <span class="tags">#${post.acf.tag_1}</span>
                     <span class="tags">#${post.acf.tag_2}</span>
