@@ -2,7 +2,7 @@
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const track = document.querySelector(".track");
-let carouselWidth = document.querySelector(".carousel-container").offsetWidth;
+let carouselWidth = document.querySelector(".slider-box").offsetWidth;
 
 let index = 0;
 
@@ -26,14 +26,14 @@ fetchPosts();
 function createHTML(data) {
   data.forEach((post) => {
     track.innerHTML += `
-    <div class="card-container">
-                <a class="card" href="#">
-                  <div class="img" style="background-image:url('${post.acf.featured_img}')"></div>
+    <div class="slider-card-box">
+                <a class="slider-card" href="../pages/article.html?id=${post.id}">
+                  <div class="slider-card-img" style="background-image:url('${post.acf.featured_img}')"></div>
                   <div>
                     <span class="tags">#${post.acf.tag_1}</span>
                     <span class="tags">#${post.acf.tag_2}</span>
                   </div>
-                  <h3 class="info">
+                  <h3 class="slider-card-info">
                     ${post.title.rendered}
                   </h3>
                 </a>
@@ -42,7 +42,7 @@ function createHTML(data) {
 }
 
 window.addEventListener("resize", () => {
-  carouselWidth = document.querySelector(".carousel-container").offsetWidth;
+  carouselWidth = document.querySelector(".slider-box").offsetWidth;
 });
 
 next.addEventListener("click", () => {
