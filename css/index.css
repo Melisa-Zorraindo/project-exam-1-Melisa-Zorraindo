@@ -27,7 +27,7 @@ h2 {
 }
 
 .slider-card-box {
-  width: 287px;
+  width: 287px; /*237 pantalla chica*/
   height: 250px;
   flex-shrink: 0;
 }
@@ -53,8 +53,16 @@ h2 {
   color: var(--base);
 }
 
-.nav button {
-  font-size: 3rem;
+/* 
+if I do pantallas chicas
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+} */
+
+.slider-nav button {
+  font-size: 3rem; /*2 pantalla chica*/
   background-color: transparent;
   color: var(--focus);
   border: none;
@@ -65,8 +73,8 @@ h2 {
 }
 
 .prev {
-  left: -3.75rem;
-  display: none;
+  left: -3.75rem; /*2.2 pantalla chica*/
+  /* display: none; */
 }
 
 .next {
