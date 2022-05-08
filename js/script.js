@@ -4,17 +4,33 @@ const next = document.querySelector(".next");
 const track = document.querySelector(".track");
 let carouselWidth = document.querySelector(".slider-box").offsetWidth;
 
-let index = 0;
-
-//call api
-const url =
+//get browser size and set variables for different screen sizes
+const browserSize = window.outerWidth;
+//render number of cards according to screen size
+let url =
   "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=12&acf_format=standard";
 
+if (browserSize <= 699) {
+  url =
+    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=3&acf_format=standard";
+} else if (browserSize >= 700 && browserSize <= 1311) {
+  url =
+    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=6&acf_format=standard";
+} else if (browserSize >= 1312 && browserSize <= 1359) {
+  url =
+    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=8&acf_format=standard";
+} else if (browserSize >= 1360) {
+  //make buttons available
+  next.style.display = "block";
+  prev.style.display = "block";
+  prev.disabled = true;
+}
+
+//call api
 async function fetchPosts() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     createHTML(data);
   } catch (error) {
     console.log(error);
@@ -41,24 +57,28 @@ function createHTML(data) {
   });
 }
 
+//add resize event for testing purposes
 window.addEventListener("resize", () => {
   carouselWidth = document.querySelector(".slider-box").offsetWidth;
 });
 
+let index = 0;
+
+//functionality for next and previous buttons desktop
 next.addEventListener("click", () => {
   index++;
-  prev.style.display = "block";
+  prev.disabled = false;
   track.style.transform = `translateX(-${index * carouselWidth}px)`;
   if (track.offsetWidth - index * carouselWidth < carouselWidth) {
-    next.style.display = "none";
+    next.disabled = true;
   }
 });
 
 prev.addEventListener("click", () => {
   index--;
-  next.style.display = "block";
+  next.disabled = false;
   track.style.transform = `translateX(-${index * carouselWidth}px)`;
   if (index === 0) {
-    prev.style.display = "none";
+    prev.disabled = true;
   }
 });

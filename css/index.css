@@ -9,27 +9,19 @@ h2 {
 }
 
 .slider-box {
-  width: 80%;
-  margin: 50px auto;
+  margin: 3rem auto;
   min-height: 200px;
-  position: relative;
 }
 
 .slider-inner-box {
   overflow: hidden;
 }
 
-.track {
-  display: inline-flex;
-  transition: transform 1s;
-  gap: 1rem;
-  box-sizing: border-box;
-}
-
 .slider-card-box {
-  width: 287px; /*237 pantalla chica*/
+  width: 80%;
+  margin: auto;
+
   height: 250px;
-  flex-shrink: 0;
 }
 
 .slider-card {
@@ -49,34 +41,11 @@ h2 {
 
 .slider-card-info {
   box-sizing: border-box;
-  background-color: var(--white);
   color: var(--base);
 }
 
-/* 
-if I do pantallas chicas
-.slider-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-} */
-
-.slider-nav button {
-  font-size: 3rem; /*2 pantalla chica*/
-  background-color: transparent;
-  color: var(--focus);
-  border: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.prev {
-  left: -3.75rem; /*2.2 pantalla chica*/
-  /* display: none; */
-}
-
+.prev,
 .next {
-  right: -3.75rem;
+  /* left: -3.75rem; */
+  display: none;
 }

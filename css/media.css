@@ -29,6 +29,20 @@
     margin: 0 auto;
   }
 
+  /* ---------- Slider homepage ---------- */
+  .track {
+    display: inline-flex;
+    gap: 1rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .slider-card-box {
+    width: 300px;
+  }
+
   /* ---------- List of articles ---------- */
   .ft-post-box {
     display: flex;
@@ -114,5 +128,45 @@
   /* ---------- Contact ---------- */
   form {
     margin-left: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1360px) {
+  .slider-box {
+    width: 1360px;
+    /* position: relative; */
+  }
+
+  .track {
+    flex-wrap: nowrap;
+    transition: transform 1s;
+  }
+
+  .slider-card-box {
+    width: 324px;
+    flex-shrink: 0;
+  }
+
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .slider-nav button {
+    font-size: 2.5rem;
+    background-color: transparent;
+    color: var(--focus);
+    border: none;
+    /*  position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+    cursor: pointer;
+  }
+
+  .prev:disabled,
+  .next:disabled {
+    color: var(--shade);
+    cursor: auto;
   }
 }
