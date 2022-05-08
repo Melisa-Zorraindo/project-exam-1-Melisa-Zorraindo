@@ -7,24 +7,21 @@ let carouselWidth = document.querySelector(".slider-box").offsetWidth;
 //get browser size and set variables for different screen sizes
 const browserSize = window.outerWidth;
 //render number of cards according to screen size
-let url =
-  "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=12&acf_format=standard";
-
+let itemsPerPage;
 if (browserSize <= 699) {
-  url =
-    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=3&acf_format=standard";
+  itemsPerPage = 3;
 } else if (browserSize >= 700 && browserSize <= 1311) {
-  url =
-    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=6&acf_format=standard";
+  itemsPerPage = 6;
 } else if (browserSize >= 1312 && browserSize <= 1359) {
-  url =
-    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=8&acf_format=standard";
+  itemsPerPage = 8;
 } else if (browserSize >= 1360) {
+  itemsPerPage = 12;
   //make buttons available
   next.style.display = "block";
   prev.style.display = "block";
   prev.disabled = true;
 }
+let url = `https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=${itemsPerPage}&acf_format=standard`;
 
 //call api
 async function fetchPosts() {
@@ -39,6 +36,7 @@ async function fetchPosts() {
 
 fetchPosts();
 
+//render HTML
 function createHTML(data) {
   data.forEach((post) => {
     track.innerHTML += `
@@ -57,14 +55,9 @@ function createHTML(data) {
   });
 }
 
-//add resize event for testing purposes
-window.addEventListener("resize", () => {
-  carouselWidth = document.querySelector(".slider-box").offsetWidth;
-});
-
+//functionality for next and previous buttons desktop
 let index = 0;
 
-//functionality for next and previous buttons desktop
 next.addEventListener("click", () => {
   index++;
   prev.disabled = false;
