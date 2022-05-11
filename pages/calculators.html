@@ -78,14 +78,18 @@
           <label for="imperial">Imperial</label>
           <input type="radio" id="imperial" value="imperial" name="system" />
         </div>
-        <select name="gender" id="gender-select" />
+        <select name="gender" id="gender-select"/>
           <option value="">Gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
+        <!-- <small class="error-message">gender is required</small> -->
         <input class="number-value" id="age" value="" placeholder="Age">
+        <small class="error-message error-age hidden">must be a number between 1 and 80</small>
         <input class="number-value" id="body-weight" value="" placeholder="Weight in KG">
+        <small class="error-message error-weight hidden">must be a number between 40 and 160</small>
         <input class="number-value" id="height" value="" placeholder="Height in CM">
+        <small class="error-message error-height hidden">must be a number between 130 and 230</small>
         <select name="activity-level" id="activity-select" />
           <option value="">Select activity level</option>
           <option value="2">Sedentary (office job)</option>

@@ -9,6 +9,72 @@ const activityLevelSelection = document.querySelector(
 const goalSelection = document.querySelector("select[name='goal']");
 const tdeeBtn = document.querySelector("#tdee-btn");
 
+//catch errors in form
+tdeeBtn.addEventListener("click", validateFields);
+
+//create HTML
+function outputResults(data) {
+  const caloriesResult = document.querySelector("#kcal-result-output");
+  const protResult = document.querySelector("#prot-result-output");
+  const carbsResult = document.querySelector("#carbs-result-output");
+  const fatsResult = document.querySelector("#fats-result-output");
+  caloriesResult.innerHTML = parseInt(data.data.calorie) + "kcal";
+  protResult.innerHTML = parseInt(data.data.balanced.protein) + "g";
+  carbsResult.innerHTML = parseInt(data.data.balanced.carbs) + "g";
+  fatsResult.innerHTML = parseInt(data.data.balanced.fat) + "g";
+}
+
+//validate fields
+function validateFields() {
+  if (!genderSelection.value) {
+    genderSelection.classList.add("error");
+  } else {
+    genderSelection.classList.remove("error");
+  }
+
+  let ageValue = parseInt(ageField.value);
+  const ageError = document.querySelector(".error-age");
+  if (!ageValue || ageValue < 1 || ageValue > 80) {
+    ageField.classList.add("error");
+    ageError.classList.remove("hidden");
+  } else {
+    ageField.classList.remove("error");
+    ageError.classList.add("hidden");
+  }
+
+  let weightValue = parseInt(weightField.value);
+  const weightError = document.querySelector(".error-weight");
+  if (!weightValue || weightValue < 40 || weightValue > 160) {
+    weightField.classList.add("error");
+    weightError.classList.remove("hidden");
+  } else {
+    weightField.classList.remove("error");
+    weightError.classList.add("hidden");
+  }
+
+  let heightValue = parseInt(heightField.value);
+  const heightError = document.querySelector(".error-height");
+  if (!heightValue || heightValue < 130 || heightValue > 230) {
+    heightField.classList.add("error");
+    heightError.classList.remove("hidden");
+  } else {
+    heightField.classList.remove("error");
+    heightError.classList.add("hidden");
+  }
+
+  if (!activityLevelSelection.value) {
+    activityLevelSelection.classList.add("error");
+  } else {
+    activityLevelSelection.classList.remove("error");
+  }
+  if (!goalSelection.value) {
+    goalSelection.classList.add("error");
+  } else {
+    goalSelection.classList.remove("error");
+  }
+  calculateResult();
+}
+
 //api call
 const options = {
   method: "GET",
@@ -29,8 +95,7 @@ async function getDailyCalorieIntake(url) {
   }
 }
 
-//set variables to call api
-tdeeBtn.addEventListener("click", () => {
+function calculateResult() {
   const gender = genderSelection.value;
   const age = parseInt(ageField.value);
   const weight = parseInt(weightField.value);
@@ -41,16 +106,4 @@ tdeeBtn.addEventListener("click", () => {
   const url = `https://fitness-calculator.p.rapidapi.com/macrocalculator?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${activity}&goal=${goal}`;
 
   getDailyCalorieIntake(url);
-});
-
-//create HTML
-function outputResults(data) {
-  const caloriesResult = document.querySelector("#kcal-result-output");
-  const protResult = document.querySelector("#prot-result-output");
-  const carbsResult = document.querySelector("#carbs-result-output");
-  const fatsResult = document.querySelector("#fats-result-output");
-  caloriesResult.innerHTML = parseInt(data.data.calorie);
-  protResult.innerHTML = parseInt(data.data.balanced.protein);
-  carbsResult.innerHTML = parseInt(data.data.balanced.carbs);
-  fatsResult.innerHTML = parseInt(data.data.balanced.fat);
 }

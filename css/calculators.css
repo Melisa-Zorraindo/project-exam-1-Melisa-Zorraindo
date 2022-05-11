@@ -36,7 +36,21 @@ h2 {
 select {
   max-width: fit-content;
   height: 2rem;
-  margin: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.error-message {
+  font: var(--alt);
+  color: red;
+  margin: 0 1rem 2rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .number-value {
