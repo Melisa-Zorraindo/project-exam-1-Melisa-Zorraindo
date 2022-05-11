@@ -15,6 +15,7 @@
 
   nav {
     position: static;
+    border-bottom: none;
     transform: translateY(0);
   }
 
