@@ -59,6 +59,11 @@ select {
   flex-direction: column;
 }
 
+.result-output {
+  font: var(--copy);
+  color: var(--base);
+}
+
 .rpe-box {
   display: flex;
   gap: 4rem;

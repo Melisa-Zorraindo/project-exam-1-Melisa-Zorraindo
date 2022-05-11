@@ -88,22 +88,28 @@
         <input class="number-value" id="height" value="" placeholder="Height in CM">
         <select name="activity-level" id="activity-select" />
           <option value="">Select activity level</option>
-          <option value="sedentary">Sedentary (office job)</option>
-          <option value="light">Light exercise (1/2 days a week)</option>
-          <option value="moderate">Moderate exercise (3/5 days a week)</option>
-          <option value="heavy">Heavy exercise (6/7 days a week)</option>
+          <option value="2">Sedentary (office job)</option>
+          <option value="4">Light exercise (1/2 days a week)</option>
+          <option value="5">Moderate exercise (3/5 days a week)</option>
+          <option value="6">Heavy exercise (6/7 days a week)</option>
+        </select>
+        <select name="goal" id="goal-select" />
+          <option value="">Select a goal</option>
+          <option value="mildlose">Lose weight</option>
+          <option value="maintain">Maintain</option>
+          <option value="mildgain">Gain weight</option>
         </select>
         <div class="results">
           <div>
-            <span>calories: 2000kcal</span>
+            <span>calories: <span class="result-output" id="kcal-result-output"></span></span>
           </div>
           <div class="macros">
-            <span>protein: 100g</span>
-            <span>carbs: 350g</span>
-            <span>fats: 60g</span>
+            <span>protein: <span class="result-output" id="prot-result-output"></span></span>
+            <span>carbs: <span class="result-output" id="carbs-result-output"></span></span>
+            <span>fats: <span class="result-output" id="fats-result-output"></span></span>
           </div>
         </div>
-        <button class="cta">calculate</button>
+        <button class="cta" id="tdee-btn">calculate</button>
       </div>
       <div class="calculator-box rpe-calculator">
         <h1>calculate your rpe</h1>
@@ -131,5 +137,6 @@
     </main>
     <footer>&copy; Melisa Zorraindo | Copyright 2022</footer>
     <script src="/js/functions/navMenu.js"></script>
+    <script src="/js/calculators.js"></script>
   </body>
 </html>
