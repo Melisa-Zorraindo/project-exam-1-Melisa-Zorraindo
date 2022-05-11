@@ -42,7 +42,7 @@ function validateFields() {
     ageError.classList.add("hidden");
   }
 
-  let weightValue = parseInt(weightField.value);
+  let weightValue = parseFloat(weightField.value);
   const weightError = document.querySelector(".error-weight");
   if (!weightValue || !isValid(weightValue, 40, 160)) {
     weightField.classList.add("error");
@@ -52,7 +52,7 @@ function validateFields() {
     weightError.classList.add("hidden");
   }
 
-  let heightValue = parseInt(heightField.value);
+  let heightValue = parseFloat(heightField.value);
   const heightError = document.querySelector(".error-height");
   if (!heightValue || !isValid(heightValue, 130, 230)) {
     heightField.classList.add("error");
