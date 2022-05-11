@@ -44,11 +44,7 @@ function renderHTML(data) {
                                     <p>
                                         ${data.content.rendered}
                                     </p>
-                                    <div class="comment-box">
-                                        <span class="tags">comments</span>
-                                        <textarea required></textarea>
-                                        <button class="cta">submit</button>
-                                    </div>
+                                 
                                 </article>`;
 
   //open and close modal popup when img clicked
