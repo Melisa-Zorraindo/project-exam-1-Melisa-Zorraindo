@@ -22,12 +22,9 @@ h2 {
   margin: 0 auto;
 }
 
-.tdee-calculator {
-  flex: 0 0 auto;
-}
-
+.tdee-calculator,
 .rpe-calculator {
-  flex: 0 0 400px;
+  flex: 0 0 80%;
 }
 
 .field-heading {

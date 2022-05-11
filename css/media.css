@@ -72,13 +72,17 @@
   form {
     width: 400px;
   }
+
+  /* ---------- Calculators ---------- */
+
+  .tdee-calculator,
+  .rpe-calculator {
+    flex: 0 0 300px;
+  }
 }
 
 @media only screen and (min-width: 816px) and (max-width: 936px) {
-  .tdee-calculator {
-    flex: 0 0 380px;
-  }
-
+  .tdee-calculator,
   .rpe-calculator {
     flex: 0 0 380px;
   }
@@ -96,6 +100,13 @@
 
   .ft-post-box p {
     max-width: 450px;
+  }
+
+  /* ---------- Calculators ---------- */
+
+  .tdee-calculator,
+  .rpe-calculator {
+    flex: 0 0 auto;
   }
 }
 
@@ -140,6 +151,12 @@
   /* ---------- Contact ---------- */
   form {
     margin-left: 3rem;
+  }
+
+  /* ---------- Calculators ---------- */
+  .calculator-box h1,
+  .calculator-box h2 {
+    margin-left: 1rem;
   }
 }
 
