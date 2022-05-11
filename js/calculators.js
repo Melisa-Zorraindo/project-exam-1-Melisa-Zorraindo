@@ -34,7 +34,7 @@ function validateFields() {
 
   let ageValue = parseInt(ageField.value);
   const ageError = document.querySelector(".error-age");
-  if (!ageValue || ageValue < 1 || ageValue > 80) {
+  if (!ageValue || !isValid(ageValue, 1, 80)) {
     ageField.classList.add("error");
     ageError.classList.remove("hidden");
   } else {
@@ -44,7 +44,7 @@ function validateFields() {
 
   let weightValue = parseInt(weightField.value);
   const weightError = document.querySelector(".error-weight");
-  if (!weightValue || weightValue < 40 || weightValue > 160) {
+  if (!weightValue || !isValid(weightValue, 40, 160)) {
     weightField.classList.add("error");
     weightError.classList.remove("hidden");
   } else {
@@ -54,7 +54,7 @@ function validateFields() {
 
   let heightValue = parseInt(heightField.value);
   const heightError = document.querySelector(".error-height");
-  if (!heightValue || heightValue < 130 || heightValue > 230) {
+  if (!heightValue || !isValid(heightValue, 130, 230)) {
     heightField.classList.add("error");
     heightError.classList.remove("hidden");
   } else {
@@ -67,13 +67,46 @@ function validateFields() {
   } else {
     activityLevelSelection.classList.remove("error");
   }
+
   if (!goalSelection.value) {
     goalSelection.classList.add("error");
   } else {
     goalSelection.classList.remove("error");
   }
+
   calculateResult();
 }
+
+//remove errors on key up
+genderSelection.addEventListener("change", () => {
+  genderSelection.classList.remove("error");
+});
+
+ageField.addEventListener("keyup", () => {
+  const ageErrorMessage = document.querySelector(".error-age");
+  ageField.classList.remove("error");
+  ageErrorMessage.classList.add("hidden");
+});
+
+weightField.addEventListener("keyup", () => {
+  const weightErrorMessage = document.querySelector(".error-weight");
+  weightField.classList.remove("error");
+  weightErrorMessage.classList.add("hidden");
+});
+
+heightField.addEventListener("keyup", () => {
+  const heightErrorMessage = document.querySelector(".error-height");
+  heightField.classList.remove("error");
+  heightErrorMessage.classList.add("hidden");
+});
+
+activityLevelSelection.addEventListener("change", () => {
+  activityLevelSelection.classList.remove("error");
+});
+
+goalSelection.addEventListener("change", () => {
+  goalSelection.classList.remove("error");
+});
 
 //api call
 const options = {
@@ -89,7 +122,6 @@ async function getDailyCalorieIntake(url) {
     const response = await fetch(url, options);
     const data = await response.json();
     outputResults(data);
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -106,4 +138,10 @@ function calculateResult() {
   const url = `https://fitness-calculator.p.rapidapi.com/macrocalculator?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${activity}&goal=${goal}`;
 
   getDailyCalorieIntake(url);
+}
+
+function isValid(field, minValue, maxValue) {
+  if (field >= minValue && field <= maxValue) {
+    return true;
+  }
 }
