@@ -1,3 +1,8 @@
+h1 {
+  font: var(--heading);
+  color: var(--base);
+}
+
 .article-box {
   display: flex;
   flex-wrap: wrap;
