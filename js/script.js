@@ -28,6 +28,7 @@ async function fetchPosts() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
     createHTML(data);
   } catch (error) {
     console.log(error);
@@ -38,6 +39,7 @@ fetchPosts();
 
 //render HTML
 function createHTML(data) {
+  track.innerHTML = "";
   data.forEach((post) => {
     track.innerHTML += `
     <div class="slider-card-box">

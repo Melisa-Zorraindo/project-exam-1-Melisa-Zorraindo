@@ -39,7 +39,17 @@
     margin-right: 2rem;
   }
 
-  .slider-card-box {
+  .lt-flex-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    margin: auto;
+  }
+
+  .slider-card-box,
+  .lt-post-img-layout {
     width: 300px;
   }
 
@@ -103,7 +113,8 @@
   }
 
   /* ---------- Homepage ---------- */
-  .slider {
+  .slider,
+  .lt-flex-layout {
     margin-left: 3rem;
     margin-right: 3rem;
   }
@@ -134,7 +145,6 @@
 @media only screen and (min-width: 1360px) {
   .slider-box {
     width: 1360px;
-    /* position: relative; */
   }
 
   .track {
@@ -142,6 +152,9 @@
     transition: transform 1s;
   }
 
+  .lt-flex-layout {
+    flex-wrap: nowrap;
+  }
   .slider-card-box {
     width: 324px;
     flex-shrink: 0;
@@ -158,9 +171,6 @@
     background-color: transparent;
     color: var(--focus);
     border: none;
-    /*  position: absolute;
-    top: 50%;
-    transform: translateY(-50%); */
     cursor: pointer;
   }
 
