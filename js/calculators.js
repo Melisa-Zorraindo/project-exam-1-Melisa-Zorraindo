@@ -130,8 +130,8 @@ async function getDailyCalorieIntake(url) {
 function calculateResult() {
   const gender = genderSelection.value;
   const age = parseInt(ageField.value);
-  const weight = parseInt(weightField.value);
-  const height = parseInt(heightField.value);
+  const weight = parseFloat(weightField.value);
+  const height = parseFloat(heightField.value);
   const activity = activityLevelSelection.value;
   const goal = goalSelection.value;
 
