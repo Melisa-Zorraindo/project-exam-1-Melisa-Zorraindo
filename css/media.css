@@ -89,6 +89,10 @@
 }
 
 @media only screen and (min-width: 1000px) {
+  p {
+    max-width: 60%;
+  }
+
   /* ---------- List of articles ---------- */
   .ft-post-img,
   .ft-img-layout {
@@ -182,6 +186,7 @@
     display: flex;
     justify-content: center;
     gap: 3rem;
+    margin-top: 2rem;
   }
 
   .slider-nav button {

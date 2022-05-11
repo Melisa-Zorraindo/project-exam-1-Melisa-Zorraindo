@@ -2,7 +2,7 @@
 
 :root {
   /* ---------- Fonts ---------- */
-  --copy: 1.2rem/1.5 "Lato", sans-serif;
+  --copy: 1.2rem/1.7 "Lato", sans-serif;
   --nav: small-caps 1.3rem "Lato", sans-serif;
   --heading: 2.2rem "Oswald", sans-serif;
   --h2: 2rem "Oswald", sans-serif;
@@ -96,6 +96,7 @@ nav a {
   text-decoration: none;
   font: var(--nav);
   color: var(--base);
+  transition: background-color 0.5s;
 }
 
 nav a:hover,
@@ -104,12 +105,6 @@ nav a:hover,
   color: var(--white);
   font-weight: 700;
 }
-
-/* .active {
-  background-color: var(--focus);
-  color: var(--white);
-
-} */
 
 /* ---------- Headings & Copy ---------- */
 h1,
@@ -126,7 +121,7 @@ h3 {
 p {
   font: var(--copy);
   color: var(--base);
-  margin: 1rem 2rem;
+  margin: 2rem;
 }
 
 a {
@@ -137,7 +132,7 @@ a {
 .tags {
   font: var(--alt);
   color: var(--focus);
-  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 /* ---------- Featured section ---------- */

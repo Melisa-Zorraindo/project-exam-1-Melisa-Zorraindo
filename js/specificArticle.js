@@ -44,7 +44,6 @@ function renderHTML(data) {
                                     <p>
                                         ${data.content.rendered}
                                     </p>
-                                 
                                 </article>`;
 
   //open and close modal popup when img clicked
