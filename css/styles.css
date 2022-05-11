@@ -2,15 +2,15 @@
 
 :root {
   /* ---------- Fonts ---------- */
-  --copy: 1rem/1.5 "Noto Sans", sans-serif;
-  --nav: small-caps 500 1.2rem "Noto Sans", sans-serif;
+  --copy: 1.2rem/1.5 "Lato", sans-serif;
+  --nav: small-caps 1.3rem "Lato", sans-serif;
   --heading: 2.2rem "Oswald", sans-serif;
   --h2: 2rem "Oswald", sans-serif;
   --h3: 1.5rem "Oswald", sans-serif;
   --cta: small-caps 1.35rem "Oswald", sans-serif;
   --subheading: small-caps 1.6rem "Oswald", sans-serif;
   --alt: small-caps 1.3rem "Oswald", sans-serif;
-  --link: 500 1rem "Noto Sans", sans-serif;
+  --link: 700 1.2rem "Lato", sans-serif;
 
   /* ---------- Colours ---------- */
   --white: #fff;
@@ -98,15 +98,18 @@ nav a {
   color: var(--base);
 }
 
-nav a:hover {
-  background-color: var(--focus);
-  color: var(--white);
-}
-
+nav a:hover,
 .active {
   background-color: var(--focus);
   color: var(--white);
+  font-weight: 700;
 }
+
+/* .active {
+  background-color: var(--focus);
+  color: var(--white);
+
+} */
 
 /* ---------- Headings & Copy ---------- */
 h1,
