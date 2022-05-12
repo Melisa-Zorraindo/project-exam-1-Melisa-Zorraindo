@@ -3,6 +3,10 @@ h1 {
   color: var(--base);
 }
 
+h2 {
+  font: var(--h2);
+}
+
 .article-box {
   display: flex;
   flex-wrap: wrap;
