@@ -30,6 +30,11 @@ h2 {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  transition: all 0.5s;
+}
+
+.slider-card:hover {
+  filter: brightness(0.5);
 }
 
 .slider-card-img {

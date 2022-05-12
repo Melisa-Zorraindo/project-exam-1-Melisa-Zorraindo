@@ -32,7 +32,7 @@ function createHTML(data) {
 
   for (let i = 0; i < data.length; i++) {
     if (i === 0) {
-      content.innerHTML = `<article>
+      content.innerHTML = `<article class="ft-post-article">
                             <a class="ft-post-box" href="../pages/article.html?id=${data[0].id}">
                                 <div>
                                     <img
