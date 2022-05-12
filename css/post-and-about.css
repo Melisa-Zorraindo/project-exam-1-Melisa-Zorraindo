@@ -28,9 +28,15 @@ h3 {
   max-width: 95%;
   display: block;
   margin: auto;
+  transition: filter 0.5s;
   /* styles needed for modal */
   position: relative;
   z-index: 15;
+}
+
+.featured-img:hover {
+  filter: brightness(0.5);
+  cursor: pointer;
 }
 
 .extra-info {
@@ -70,6 +76,11 @@ textarea {
   border: 0.5rem solid var(--shade);
 }
 
+.modal-img:hover {
+  cursor: auto;
+  filter: brightness(1);
+}
+
 .overlay {
   position: absolute;
   bottom: 0;
@@ -78,6 +89,7 @@ textarea {
   height: 100vh;
   background-color: var(--white);
   z-index: 5;
+  cursor: pointer;
 }
 
 .hidden {
