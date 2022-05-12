@@ -38,8 +38,9 @@ h2 {
 
 .post-card h2,
 .ft-post-box h2 {
-  margin-left: 1rem;
-  margin-top: 0;
+  margin: 0 1rem;
+  /*   margin-left: 1rem;
+  margin-top: 0; */
 }
 
 .post-card a h2 {
@@ -51,13 +52,13 @@ h2 {
 }
 
 .ft-post-box p {
-  margin-left: 1rem;
+  margin: 0 1rem;
   max-width: 300px;
 }
 
 .post-card p,
 .post-card h2 {
-  margin: 1rem;
+  margin: 0 1rem;
   max-width: 300px;
 }
 
