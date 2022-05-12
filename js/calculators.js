@@ -229,9 +229,42 @@ function outputResults(data) {
 const liftedWeight = document.querySelector("#lifted-weight");
 const performedReps = document.querySelector("#performed-reps");
 const reachedRpe = document.querySelector("#reached-rpe");
+const desiredReps = document.querySelector("#desired-reps");
 
 const rpeBtn = document.querySelector("#rpe-btn");
 
+const coefficients = [
+  1, 0.95, 0.9, 0.86, 0.82, 0.78, 0.74, 0.7, 0.65, 0.61, 0.57, 0.53,
+];
+
+/* const coefficients = [
+  { rm1: 1 },
+  { rm2: 0.95 },
+  { rm3: 0.9 },
+  { rm4: 0.86 },
+  { rm5: 0.82 },
+  { rm6: 0.78 },
+  { rm7: 0.74 },
+  { rm8: 0.7 },
+  { rm9: 0.65 },
+  { rm10: 0.61 },
+  { rm11: 0.57 },
+  { rm12: 0.53 },
+]; */
+
 rpeBtn.addEventListener("click", calculateRpe);
 
-function calculateRpe() {}
+function calculateRpe() {
+  let liftedWeightValue = parseFloat(liftedWeight.value);
+  let performedRepsValue = parseInt(performedReps.value);
+  // let reachedRpeValue = parseFloat(reachedRpe.value); not in use atm
+  let desiredRepsValue = parseInt(desiredReps.value);
+
+  let rm1 = (liftedWeightValue / coefficients[performedRepsValue - 1]).toFixed(
+    1
+  );
+  console.log(rm1);
+
+  let weightToLift = (rm1 * coefficients[desiredRepsValue - 1]).toFixed(1);
+  console.log(weightToLift);
+}
