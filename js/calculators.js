@@ -1,3 +1,5 @@
+// TDEE CALCULATOR
+
 //select elements in the DOM
 const imperialSystem = document.querySelector("#imperial");
 const metricSystem = document.querySelector("#metric");
@@ -25,28 +27,6 @@ imperialSystem.addEventListener("change", () => {
   weightField.placeholder = "Weight in lbs";
   heightField.placeholder = "Height in FT";
 });
-
-//create HTML
-function outputResults(data) {
-  const resultsContainer = document.querySelector(".results");
-
-  resultsContainer.innerHTML = `<div>
-  <span>calories: <span class="result-output" id="kcal-result-output">${parseInt(
-    data.data.calorie
-  )}kcal</span></span>
-</div>
-<div class="macros">
-  <span>protein: <span class="result-output" id="prot-result-output">${parseInt(
-    data.data.balanced.protein
-  )}g</span></span>
-  <span>carbs: <span class="result-output" id="carbs-result-output">${parseInt(
-    data.data.balanced.carbs
-  )}g</span></span>
-  <span>fats: <span class="result-output" id="fats-result-output">${parseInt(
-    data.data.balanced.fat
-  )}g</span></span>
-</div>`;
-}
 
 //validate fields
 function validateFields() {
@@ -218,4 +198,26 @@ function lbsToKg(weightInLbs) {
 //convert ft to cm
 function ftToCm(heightInFt) {
   return heightInFt * 30.48;
+}
+
+//create HTML
+function outputResults(data) {
+  const resultsContainer = document.querySelector(".results");
+
+  resultsContainer.innerHTML = `<div>
+  <span>calories: <span class="result-output" id="kcal-result-output">${parseInt(
+    data.data.calorie
+  )}kcal</span></span>
+</div>
+<div class="macros">
+  <span>protein: <span class="result-output" id="prot-result-output">${parseInt(
+    data.data.balanced.protein
+  )}g</span></span>
+  <span>carbs: <span class="result-output" id="carbs-result-output">${parseInt(
+    data.data.balanced.carbs
+  )}g</span></span>
+  <span>fats: <span class="result-output" id="fats-result-output">${parseInt(
+    data.data.balanced.fat
+  )}g</span></span>
+</div>`;
 }
