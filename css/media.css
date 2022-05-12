@@ -116,7 +116,8 @@
 
 @media only screen and (min-width: 1200px) {
   h1,
-  h2 {
+  h2,
+  h3 {
     margin-left: 3rem;
   }
 

@@ -12,6 +12,12 @@ h2 {
   margin-right: 1rem;
 }
 
+h3 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 4rem;
+}
+
 .quote {
   font: var(--h2);
   color: var(--base);
