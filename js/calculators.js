@@ -221,3 +221,17 @@ function outputResults(data) {
   )}g</span></span>
 </div>`;
 }
+
+// RPE CALCULATOR
+
+//select elements in the DOM
+
+const liftedWeight = document.querySelector("#lifted-weight");
+const performedReps = document.querySelector("#performed-reps");
+const reachedRpe = document.querySelector("#reached-rpe");
+
+const rpeBtn = document.querySelector("#rpe-btn");
+
+rpeBtn.addEventListener("click", calculateRpe);
+
+function calculateRpe() {}
