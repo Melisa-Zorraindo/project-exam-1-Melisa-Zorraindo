@@ -14,14 +14,24 @@ tdeeBtn.addEventListener("click", validateFields);
 
 //create HTML
 function outputResults(data) {
-  const caloriesResult = document.querySelector("#kcal-result-output");
-  const protResult = document.querySelector("#prot-result-output");
-  const carbsResult = document.querySelector("#carbs-result-output");
-  const fatsResult = document.querySelector("#fats-result-output");
-  caloriesResult.innerHTML = parseInt(data.data.calorie) + "kcal";
-  protResult.innerHTML = parseInt(data.data.balanced.protein) + "g";
-  carbsResult.innerHTML = parseInt(data.data.balanced.carbs) + "g";
-  fatsResult.innerHTML = parseInt(data.data.balanced.fat) + "g";
+  const resultsContainer = document.querySelector(".results");
+
+  resultsContainer.innerHTML = `<div>
+  <span>calories: <span class="result-output" id="kcal-result-output">${parseInt(
+    data.data.calorie
+  )}kcal</span></span>
+</div>
+<div class="macros">
+  <span>protein: <span class="result-output" id="prot-result-output">${parseInt(
+    data.data.balanced.protein
+  )}g</span></span>
+  <span>carbs: <span class="result-output" id="carbs-result-output">${parseInt(
+    data.data.balanced.carbs
+  )}g</span></span>
+  <span>fats: <span class="result-output" id="fats-result-output">${parseInt(
+    data.data.balanced.fat
+  )}g</span></span>
+</div>`;
 }
 
 //validate fields
