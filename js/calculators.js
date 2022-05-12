@@ -1,4 +1,7 @@
 //select elements in the DOM
+const imperialSystem = document.querySelector("#imperial");
+const metricSystem = document.querySelector("#metric");
+
 const genderSelection = document.querySelector("select[name='gender']");
 const ageField = document.querySelector("#age");
 const weightField = document.querySelector("#body-weight");
@@ -11,6 +14,17 @@ const tdeeBtn = document.querySelector("#tdee-btn");
 
 //catch errors in form
 tdeeBtn.addEventListener("click", validateFields);
+
+//system selection
+metricSystem.addEventListener("change", () => {
+  weightField.placeholder = "Weight in KG";
+  heightField.placeholder = "Height in CM";
+});
+
+imperialSystem.addEventListener("change", () => {
+  weightField.placeholder = "Weight in lbs";
+  heightField.placeholder = "Height in FT";
+});
 
 //create HTML
 function outputResults(data) {
@@ -36,12 +50,14 @@ function outputResults(data) {
 
 //validate fields
 function validateFields() {
+  //gender
   if (!genderSelection.value) {
     genderSelection.classList.add("error");
   } else {
     genderSelection.classList.remove("error");
   }
 
+  //age
   let ageValue = parseInt(ageField.value);
   const ageError = document.querySelector(".error-age");
   if (!ageValue || !isValid(ageValue, 1, 80)) {
@@ -52,8 +68,24 @@ function validateFields() {
     ageError.classList.add("hidden");
   }
 
+  //weight
   let weightValue = parseFloat(weightField.value);
   const weightError = document.querySelector(".error-weight");
+
+  //if imperial
+  if (imperialSystem.checked) {
+    weightValue = parseFloat(lbsToKg(weightValue));
+    if (!weightValue || !isValid(weightValue, 88, 353)) {
+      weightField.classList.add("error");
+      weightError.innerHTML = "must be a number between 88 and 353";
+      weightError.classList.remove("hidden");
+    } else {
+      weightField.classList.remove("error");
+      weightError.classList.add("hidden");
+    }
+  }
+
+  //if metric
   if (!weightValue || !isValid(weightValue, 40, 160)) {
     weightField.classList.add("error");
     weightError.classList.remove("hidden");
@@ -62,8 +94,23 @@ function validateFields() {
     weightError.classList.add("hidden");
   }
 
+  //height
   let heightValue = parseFloat(heightField.value);
   const heightError = document.querySelector(".error-height");
+
+  //if imperial
+  if (imperialSystem.checked) {
+    heightValue = parseFloat(ftToCm(heightValue));
+    if (!heightValue || !isValid(heightValue, 4.26, 7.54)) {
+      heightField.classList.add("error");
+      heightError.innerHTML = "must be a number between 4.26 and 7.54";
+      heightError.classList.remove("hidden");
+    } else {
+      heightField.classList.remove("error");
+      heightError.classList.add("hidden");
+    }
+  }
+
   if (!heightValue || !isValid(heightValue, 130, 230)) {
     heightField.classList.add("error");
     heightError.classList.remove("hidden");
@@ -72,12 +119,14 @@ function validateFields() {
     heightError.classList.add("hidden");
   }
 
+  //activity
   if (!activityLevelSelection.value) {
     activityLevelSelection.classList.add("error");
   } else {
     activityLevelSelection.classList.remove("error");
   }
 
+  //goal
   if (!goalSelection.value) {
     goalSelection.classList.add("error");
   } else {
@@ -140,8 +189,13 @@ async function getDailyCalorieIntake(url) {
 function calculateResult() {
   const gender = genderSelection.value;
   const age = parseInt(ageField.value);
-  const weight = parseFloat(weightField.value);
-  const height = parseFloat(heightField.value);
+  let weight = parseFloat(weightField.value);
+  let height = parseFloat(heightField.value);
+  if (imperialSystem.checked) {
+    weight = parseFloat(lbsToKg(weight));
+    height = parseFloat(ftToCm(height));
+  }
+
   const activity = activityLevelSelection.value;
   const goal = goalSelection.value;
 
@@ -154,4 +208,14 @@ function isValid(field, minValue, maxValue) {
   if (field >= minValue && field <= maxValue) {
     return true;
   }
+}
+
+//convert lbs to KG
+function lbsToKg(weightInLbs) {
+  return weightInLbs * 0.45359237;
+}
+
+//convert ft to cm
+function ftToCm(heightInFt) {
+  return heightInFt * 30.48;
 }
