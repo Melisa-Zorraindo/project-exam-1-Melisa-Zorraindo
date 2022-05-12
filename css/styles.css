@@ -157,3 +157,7 @@ a {
   margin: 3rem 1rem;
   cursor: pointer;
 }
+
+.cta:hover {
+  box-shadow: none;
+}
