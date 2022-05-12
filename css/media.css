@@ -125,6 +125,10 @@
     margin: 1rem 3rem;
   }
 
+  .list-of-posts-heading {
+    margin-left: 4rem;
+  }
+
   .featured-img {
     max-width: 93%;
   }
