@@ -25,7 +25,8 @@
     max-width: 1600px;
   }
 
-  .main-content {
+  .main-content,
+  .main-content-calculators-page {
     max-width: 1600px;
     margin: 0 auto;
   }
