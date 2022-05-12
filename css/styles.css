@@ -81,6 +81,8 @@ nav {
   width: 100%;
   transform: translateY(-200%);
   transition: transform 1s ease;
+  /* needed for very small screens not to fall behind the featured image on article specific page */
+  z-index: 20;
 }
 
 nav ul {
