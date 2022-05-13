@@ -64,6 +64,21 @@ textarea {
   margin-right: 1rem;
 }
 
+/* ---------- Scroll to top button ---------- */
+
+.to-top {
+  border: none;
+  padding: 1rem;
+  background-color: var(--white);
+  font-size: 2rem;
+  color: var(--focus);
+  position: sticky;
+  bottom: 2rem;
+  left: 85%;
+  cursor: pointer;
+  display: none;
+}
+
 /* ---------- Modal popup ---------- */
 .modal-img {
   position: absolute;
