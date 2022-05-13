@@ -235,75 +235,40 @@ const desiredRpe = document.querySelector("#desired-rpe");
 const rpeBtn = document.querySelector("#rpe-btn");
 
 const coefficients = [
-  {
-    rpeTen: [
-      1, 0.955, 0.92, 0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68,
-    ],
-  },
-  {
-    rpeNineFive: [
-      0.98, 0.94, 0.91, 0.88, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695,
-      0.665,
-    ],
-  },
-  {
-    rpeNine: [
-      0.955, 0.92, 0.89, 0.865, 0.835, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68,
-      0.65,
-    ],
-  },
-  {
-    rpeEightFive: [
-      0.94, 0.91, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.67, 0.64,
-    ],
-  },
-  {
-    rpeEight: [
-      0.92, 0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68, 0.655,
-      0.625,
-    ],
-  },
-  {
-    rpeSevenFive: [
-      0.91, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.665, 0.64,
-      0.61,
-    ],
-  },
-  {
-    rpeSeven: [
-      0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68, 0.655, 0.625, 0.6,
-    ],
-  },
-  {
-    rpeSixFive: [
-      0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.665, 0.64, 0.615,
-      0.585,
-    ],
-  },
+  [1, 0.955, 0.92, 0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68],
+  [0.98, 0.94, 0.91, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.665],
+  [0.955, 0.92, 0.89, 0.865, 0.835, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68, 0.65],
+  [0.94, 0.91, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.67, 0.64],
+  [0.92, 0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68, 0.655, 0.625],
+  [0.91, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.665, 0.64, 0.61],
+  [0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68, 0.655, 0.625, 0.6],
+  [
+    0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.665, 0.64, 0.615,
+    0.585,
+  ],
 ];
 
 rpeBtn.addEventListener("click", calculateRpe);
 
 function calculateRpe() {
-  let liftedWeightValue = parseFloat(liftedWeight.value);
-  let desiredRepsValue = parseInt(desiredReps.value);
+  const liftedWeightValue = parseFloat(liftedWeight.value);
+  const performedRepsValue = parseInt(performedReps.value);
+  const reachedRpeValue = parseInt(reachedRpe.value);
 
-  /*let rm1 = (liftedWeightValue / coefficients[performedRepsValue - 1]).toFixed(
-    1
-  );
-  console.log(rm1);
+  const desiredRepsValue = parseInt(desiredReps.value);
+  const desiredRpeValue = parseInt(desiredRpe.value);
 
-  let weightToLift = (rm1 * coefficients[desiredRepsValue - 1]).toFixed(1);
-  console.log(weightToLift); */
+  let selectedRpe = coefficients[reachedRpeValue];
+  let coeffForRM = selectedRpe[performedRepsValue - 1];
 
-  //find reached rpe
-  let reachedRpeValue = parseFloat(reachedRpe.value);
-  let performedRepsValue = parseInt(performedReps.value);
-  let reachedCoeff;
-  for (let i = 0; i < coefficients.length; i++) {
-    if (coefficients[i] === reachedRpeValue)
-      for (let j = 0; j < coefficients[i].length; j++) {
-        console.log();
-      }
-  }
+  //get 1RM
+  let rm = (liftedWeightValue / coeffForRM).toFixed(1);
+  console.log(rm);
+
+  let wantedRpe = coefficients[desiredRpeValue];
+  let coeffForRecommendedWeight = wantedRpe[desiredRepsValue - 1];
+
+  //get weight to lift
+  let weightToLift = (rm * coeffForRecommendedWeight).toFixed(1);
+  console.log(weightToLift);
 }
