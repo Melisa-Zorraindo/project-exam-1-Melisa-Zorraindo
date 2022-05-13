@@ -68,6 +68,8 @@ function renderHTML(data) {
 function displayBtn() {
   if (scrollY >= 600) {
     scrollToTopBtn.style.display = "block";
+  } else if (scrollY === 0) {
+    scrollToTopBtn.style.display = "none";
   }
 }
 
@@ -75,7 +77,7 @@ function scrollToTop() {
   const rootElement = document.documentElement;
   rootElement.scrollTo({
     top: 0,
-    behavior: "smooth",
+    // behavior: "smooth",
   });
 }
 
