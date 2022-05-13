@@ -101,10 +101,13 @@
     height: 300px;
   }
 
-  /* ---------- Specific article ---------- */
-
   .ft-post-box p {
     max-width: 450px;
+  }
+
+  /* ---------- Specific article ---------- */
+  .to-top {
+    left: 60%;
   }
 
   /* ---------- Calculators ---------- */
