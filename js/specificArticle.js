@@ -9,6 +9,10 @@ const url = `https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?i
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 
+//for the scroll to top button
+const scrollToTop = document.querySelector(".to-top");
+// console.log(scrollToTop);
+
 async function getArticle() {
   try {
     const response = await fetch(url);
@@ -60,3 +64,14 @@ function renderHTML(data) {
     body.style.overflow = "auto";
   });
 }
+
+//scroll to top button
+const coordinate = window.pageYOffset;
+console.log(coordinate);
+
+window.addEventListener("scroll", () => {
+  if (scrollY >= 600) {
+    console.log(scrollY);
+    scrollToTop.style.display = "block";
+  }
+});
