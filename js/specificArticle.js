@@ -10,8 +10,7 @@ const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 
 //for the scroll to top button
-const scrollToTop = document.querySelector(".to-top");
-// console.log(scrollToTop);
+const scrollToTopBtn = document.querySelector(".to-top");
 
 async function getArticle() {
   try {
@@ -66,12 +65,19 @@ function renderHTML(data) {
 }
 
 //scroll to top button
-const coordinate = window.pageYOffset;
-console.log(coordinate);
-
-window.addEventListener("scroll", () => {
+function displayBtn() {
   if (scrollY >= 600) {
-    console.log(scrollY);
-    scrollToTop.style.display = "block";
+    scrollToTopBtn.style.display = "block";
   }
-});
+}
+
+function scrollToTop() {
+  const rootElement = document.documentElement;
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+window.addEventListener("scroll", displayBtn);
+scrollToTopBtn.addEventListener("click", scrollToTop);
