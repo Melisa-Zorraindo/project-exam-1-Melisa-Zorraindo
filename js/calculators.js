@@ -225,7 +225,6 @@ function outputResults(data) {
 // RPE CALCULATOR
 
 //select elements in the DOM
-
 const liftedWeight = document.querySelector("#lifted-weight");
 const performedReps = document.querySelector("#performed-reps");
 const reachedRpe = document.querySelector("#reached-rpe");
@@ -233,6 +232,10 @@ const desiredReps = document.querySelector("#desired-reps");
 const desiredRpe = document.querySelector("#desired-rpe");
 
 const rpeBtn = document.querySelector("#rpe-btn");
+
+//elements for final results
+const rmResult = document.querySelector("#rm-result");
+const weightResult = document.querySelector("#weight-result");
 
 const coefficients = [
   [1, 0.955, 0.92, 0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68],
@@ -263,12 +266,17 @@ function calculateRpe() {
 
   //get 1RM
   let rm = (liftedWeightValue / coeffForRM).toFixed(1);
-  console.log(rm);
 
   let wantedRpe = coefficients[desiredRpeValue];
   let coeffForRecommendedWeight = wantedRpe[desiredRepsValue - 1];
 
   //get weight to lift
   let weightToLift = (rm * coeffForRecommendedWeight).toFixed(1);
-  console.log(weightToLift);
+
+  outputRPECalcResults(rm, weightToLift);
+}
+
+function outputRPECalcResults(rm, weight) {
+  rmResult.innerHTML = `est 1rm: <span class="result-output">${rm}Kg</span>`;
+  weightResult.innerHTML = `weight: <span class="result-output">${weight}Kg</span>`;
 }
