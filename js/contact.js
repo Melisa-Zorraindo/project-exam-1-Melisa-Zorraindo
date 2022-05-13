@@ -70,6 +70,12 @@ function submitForm() {
   successMessage.innerHTML = `<p>Thank you, ${userName}.</p>
                                 <p>Your message has been sent</p>
                                 <a href="https://fitfactory-noroff-project.netlify.app/pages/contact.html"<i class="fas fa-caret-square-left"></i></a>`;
+
+  /*   const arrowBack = document.querySelector(".fa-caret-square-left");
+
+  arrowBack.addEventListener("click", () => {
+    successMessage.innerHTML = "";
+  }); */
 }
 
 function checkLengths(val, len) {
