@@ -30,6 +30,9 @@ fetchPosts();
 function createHTML(data) {
   content.innerHTML = "";
 
+  //display button
+  loadMoreBtn.style.display = "block";
+
   for (let i = 0; i < data.length; i++) {
     if (i === 0) {
       content.innerHTML = `<article class="ft-post-article">
@@ -75,7 +78,10 @@ function createHTML(data) {
                                </article>
                                `;
     }
+
+    //hide button when end of posts
+    if (i === 13) {
+      loadMoreBtn.style.display = "none";
+    }
   }
-  //display button
-  loadMoreBtn.style.display = "block";
 }
