@@ -237,6 +237,10 @@ const rpeBtn = document.querySelector("#rpe-btn");
 const rmResult = document.querySelector("#rm-result");
 const weightResult = document.querySelector("#weight-result");
 
+//elements for error display
+const liftedRepsError = document.querySelector(".lifted-reps-error");
+const desiredRepsError = document.querySelector(".desired-reps-error");
+
 const coefficients = [
   [1, 0.955, 0.92, 0.89, 0.865, 0.84, 0.81, 0.785, 0.76, 0.74, 0.71, 0.68],
   [0.98, 0.94, 0.91, 0.88, 0.85, 0.825, 0.8, 0.775, 0.75, 0.725, 0.695, 0.665],
@@ -251,15 +255,93 @@ const coefficients = [
   ],
 ];
 
-rpeBtn.addEventListener("click", calculateRpe);
+rpeBtn.addEventListener("click", validateRpeValues);
+
+let liftedWeightValue;
+let performedRepsValue;
+let reachedRpeValue;
+
+let desiredRepsValue;
+let desiredRpeValue;
+
+function validateRpeValues() {
+  liftedWeightValue = parseFloat(liftedWeight.value);
+  performedRepsValue = parseInt(performedReps.value);
+  reachedRpeValue = parseInt(reachedRpe.value);
+
+  desiredRepsValue = parseInt(desiredReps.value);
+  desiredRpeValue = parseInt(desiredRpe.value);
+
+  if (!liftedWeightValue) {
+    liftedWeight.classList.add("error");
+  } else {
+    liftedWeight.classList.remove("error");
+  }
+
+  if (!performedRepsValue || !isValid(performedRepsValue, 1, 12)) {
+    performedReps.classList.add("error");
+    liftedRepsError.classList.remove("hidden");
+  } else {
+    performedReps.classList.remove("error");
+    liftedRepsError.classList.add("hidden");
+  }
+
+  if (!reachedRpeValue) {
+    reachedRpe.classList.add("error");
+  } else {
+    reachedRpe.classList.remove("error");
+  }
+
+  if (!desiredRepsValue || !isValid(desiredRepsValue, 1, 12)) {
+    desiredReps.classList.add("error");
+    desiredRepsError.classList.remove("hidden");
+  } else {
+    desiredReps.classList.remove("error");
+    desiredRepsError.classList.add("hidden");
+  }
+
+  if (!desiredRpeValue) {
+    desiredRpe.classList.add("error");
+  } else {
+    desiredRpe.classList.remove("error");
+  }
+
+  calculateRpe();
+}
+
+//remove errors on key up
+liftedWeight.addEventListener("change", () => {
+  liftedWeight.classList.remove("error");
+});
+
+performedReps.addEventListener("keyup", () => {
+  const performedRepsErrorMessage =
+    document.querySelector(".lifted-reps-error");
+  performedReps.classList.remove("error");
+  performedRepsErrorMessage.classList.add("hidden");
+});
+
+reachedRpe.addEventListener("change", () => {
+  reachedRpe.classList.remove("error");
+});
+
+desiredReps.addEventListener("keyup", () => {
+  const desiredRepsErrorMessage = document.querySelector(".desired-reps-error");
+  desiredReps.classList.remove("error");
+  desiredRepsErrorMessage.classList.add("hidden");
+});
+
+desiredRpe.addEventListener("change", () => {
+  desiredRpe.classList.remove("error");
+});
 
 function calculateRpe() {
-  const liftedWeightValue = parseFloat(liftedWeight.value);
-  const performedRepsValue = parseInt(performedReps.value);
-  const reachedRpeValue = parseInt(reachedRpe.value);
+  liftedWeightValue = parseFloat(liftedWeight.value);
+  performedRepsValue = parseInt(performedReps.value);
+  reachedRpeValue = parseInt(reachedRpe.value);
 
-  const desiredRepsValue = parseInt(desiredReps.value);
-  const desiredRpeValue = parseInt(desiredRpe.value);
+  desiredRepsValue = parseInt(desiredReps.value);
+  desiredRpeValue = parseInt(desiredRpe.value);
 
   let selectedRpe = coefficients[reachedRpeValue];
   let coeffForRM = selectedRpe[performedRepsValue - 1];
