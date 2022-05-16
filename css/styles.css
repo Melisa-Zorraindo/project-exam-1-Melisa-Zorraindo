@@ -64,7 +64,9 @@ footer {
 }
 
 .nav-menu-box {
-  text-align: center;
+  text-align: right;
+  color: var(--base);
+  margin-right: 1rem;
 }
 
 .nav-menu {

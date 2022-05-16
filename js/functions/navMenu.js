@@ -8,11 +8,11 @@ function toggleNavMenu() {
   if (navBar.style.transform === "translateY(-200%)") {
     console.log(navBar);
     navBar.style.transform = "translateY(0)";
-    menuIcon.classList.remove("fa-caret-down");
-    menuIcon.classList.add("fa-caret-up");
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-times");
   } else {
     navBar.style.transform = "translateY(-200%)";
-    menuIcon.classList.remove("fa-caret-up");
-    menuIcon.classList.add("fa-caret-down");
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
   }
 }
