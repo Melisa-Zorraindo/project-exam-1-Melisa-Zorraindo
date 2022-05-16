@@ -18,6 +18,7 @@ h3 {
   margin-left: 1rem;
   margin-bottom: 2rem;
   height: 2rem;
+  width: 15rem;
   border-color: var(--focus);
   font: var(--copy);
   font-size: 1rem;

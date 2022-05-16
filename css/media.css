@@ -6,6 +6,12 @@
   .post-img {
     width: 150px;
   }
+
+  /* ---------- List of articles ---------- */
+
+  .tag-selector {
+    width: fit-content;
+  }
 }
 
 @media only screen and (min-width: 700px) {
