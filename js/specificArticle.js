@@ -33,7 +33,6 @@ function renderHTML(data) {
                                     <h1>${data.acf.subtitle}</h1>
                                     <h2>${data.title.rendered}</h2>
                                     <img
-                                        alt=""
                                         class="featured-img"
                                         src="${data.acf.featured_img}"
                                     />
@@ -50,18 +49,38 @@ function renderHTML(data) {
                                 </article>`;
 
   //open and close modal popup when img clicked
-  const img = document.querySelector(".featured-img");
-  img.addEventListener("click", () => {
+  const largerPic = document.querySelectorAll("figure img");
+  largerPic.forEach((pic) => {
+    pic.addEventListener("click", () => {
+      enlargeImg(pic);
+    });
+    overlay.addEventListener("click", () => {
+      removeOverlay(pic);
+    });
+  });
+
+  function enlargeImg(picture) {
+    picture.classList.add("modal-img");
+    body.style.overflow = "hidden";
+    overlay.classList.remove("hidden");
+  }
+
+  function removeOverlay(picture) {
+    picture.classList.remove("modal-img");
+    overlay.classList.add("hidden");
+    body.style.overflow = "auto";
+  }
+  /*   img.addEventListener("click", () => {
     img.classList.add("modal-img");
     body.style.overflow = "hidden";
     overlay.classList.remove("hidden");
-  });
+  }); */
 
-  overlay.addEventListener("click", () => {
+  /*   overlay.addEventListener("click", () => {
     img.classList.remove("modal-img");
     overlay.classList.add("hidden");
     body.style.overflow = "auto";
-  });
+  }); */
 }
 
 //scroll to top button

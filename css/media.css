@@ -109,6 +109,10 @@
     left: 60%;
   }
 
+  figure img {
+    max-width: 60%;
+  }
+
   /* ---------- Calculators ---------- */
 
   .tdee-calculator,
