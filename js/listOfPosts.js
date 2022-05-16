@@ -12,22 +12,23 @@ async function fetchPosts() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     createHTML(data);
 
     //filter posts by tag
     const tagSelector = document.querySelector(".tag-selector");
     tagSelector.addEventListener("change", () => {
-      console.log(tagSelector.value);
+      if (tagSelector.value === "all-tags") {
+        createHTML(data);
+      } else {
+        const filteredPosts = data.filter((post) => {
+          return (
+            tagSelector.value === post.acf.tag_1 ||
+            tagSelector.value === post.acf.tag_2
+          );
+        });
 
-      const filteredPosts = data.filter((post) => {
-        return (
-          tagSelector.value === post.acf.tag_1 ||
-          tagSelector.value === post.acf.tag_2
-        );
-      });
-
-      createHTML(filteredPosts);
+        createHTML(filteredPosts);
+      }
     });
   } catch (error) {
     console.log(error);
