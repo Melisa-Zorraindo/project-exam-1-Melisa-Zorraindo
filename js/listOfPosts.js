@@ -25,7 +25,7 @@ loadMoreBtn.addEventListener("click", () => {
   fetchPosts();
 });
 
-fetchPosts();
+// fetchPosts();
 
 function createHTML(data) {
   content.innerHTML = "";
@@ -37,6 +37,7 @@ function createHTML(data) {
     if (i === 0) {
       content.innerHTML = `<article class="ft-post-article">
                             <a class="ft-post-box" href="../pages/article.html?id=${data[0].id}">
+                            <h3 class="card-heading">${data[0].title.rendered}</h3>
                                 <div>
                                     <img
                                         class="ft-post-img"
@@ -48,7 +49,6 @@ function createHTML(data) {
                                         <span class="tags">#${data[0].acf.tag_1}</span>
                                         <span class="tags">#${data[0].acf.tag_2}</span>
                                     </div>
-                                    <h2>${data[0].title.rendered}</h2>
                                     <p>
                                         ${data[0].acf.brief}
                                     </p>
@@ -58,6 +58,7 @@ function createHTML(data) {
     } else if (i < data.length) {
       content.innerHTML += `<article class="post-card">
                               <a href="../pages/article.html?id=${data[i].id}">
+                              <h3 class="card-heading">${data[i].title.rendered}</h3>
                                     <div>
                                         <img
                                         class="post-img"
@@ -69,7 +70,6 @@ function createHTML(data) {
                                           <span class="tags">#${data[i].acf.tag_1}</span>
                                           <span class="tags">#${data[i].acf.tag_2}</span>
                                         </div>
-                                        <h2>${data[i].title.rendered}</h2>
                                         <p>
                                         ${data[i].acf.brief}
                                         </p>

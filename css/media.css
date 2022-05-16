@@ -58,7 +58,6 @@
   /* ---------- List of articles ---------- */
   .ft-post-box {
     display: flex;
-    flex: 0 0 100%;
   }
 
   .comment-box {
@@ -145,10 +144,48 @@
   }
 
   /* ---------- List of articles ---------- */
-  .article-box,
-  .flex-layout {
+  .article-box {
     margin-left: 3rem;
     margin-right: 3rem;
+    gap: 1rem;
+  }
+
+  .flex-layout {
+    gap: 1rem;
+  }
+
+  .card-heading {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ft-post-img,
+  .post-img {
+    margin-left: 0;
+  }
+
+  .tags {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .ft-post-box .tags {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+
+  .post-card p {
+    margin: 0;
+  }
+
+  .ft-img-layout,
+  .post-img-layout {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .tags-layout {
+    margin-left: 0;
   }
 
   /* ---------- Specific article ---------- */
