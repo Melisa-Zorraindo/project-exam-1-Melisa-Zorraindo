@@ -70,17 +70,6 @@ function renderHTML(data) {
     overlay.classList.add("hidden");
     body.style.overflow = "auto";
   }
-  /*   img.addEventListener("click", () => {
-    img.classList.add("modal-img");
-    body.style.overflow = "hidden";
-    overlay.classList.remove("hidden");
-  }); */
-
-  /*   overlay.addEventListener("click", () => {
-    img.classList.remove("modal-img");
-    overlay.classList.add("hidden");
-    body.style.overflow = "auto";
-  }); */
 }
 
 //scroll to top button

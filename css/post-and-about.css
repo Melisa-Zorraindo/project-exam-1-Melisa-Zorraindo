@@ -24,15 +24,15 @@ h3 {
   margin-top: 3rem;
 }
 
-.featured-img {
+/* .featured-img {
   max-width: 95%;
   display: block;
   margin: auto;
   transition: filter 0.5s;
   /* styles needed for modal */
-  position: relative;
-  z-index: 15;
-}
+/*   position: relative;
+  z-index: 15; 
+} */
 
 .extra-info {
   display: flex;
@@ -68,12 +68,6 @@ figure img:hover {
   max-width: 80%;
   margin-top: 3rem;
 }
-
-/* textarea {
-  height: 100px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-} */
 
 /* ---------- Scroll to top button ---------- */
 
