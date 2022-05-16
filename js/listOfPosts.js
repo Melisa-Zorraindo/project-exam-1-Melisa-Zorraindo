@@ -12,13 +12,29 @@ async function fetchPosts() {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
     createHTML(data);
+
+    //filter posts by tag
+    const tagSelector = document.querySelector(".tag-selector");
+    tagSelector.addEventListener("change", () => {
+      console.log(tagSelector.value);
+
+      const filteredPosts = data.filter((post) => {
+        return (
+          tagSelector.value === post.acf.tag_1 ||
+          tagSelector.value === post.acf.tag_2
+        );
+      });
+
+      createHTML(filteredPosts);
+    });
   } catch (error) {
     console.log(error);
   }
 }
 
-//call api
+//call api when load more btn clicked
 loadMoreBtn.addEventListener("click", () => {
   url =
     "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=100&acf_format=standard";
