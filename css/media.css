@@ -148,6 +148,10 @@
   }
 
   /* ---------- List of articles ---------- */
+  .tag-selector {
+    margin-left: 3rem;
+  }
+
   .article-box {
     margin-left: 3rem;
     margin-right: 3rem;
