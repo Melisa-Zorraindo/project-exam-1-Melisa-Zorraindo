@@ -14,6 +14,7 @@ h3 {
   color: var(--base);
 }
 
+input[type="search"],
 .tag-selector {
   margin-left: 1rem;
   margin-bottom: 2rem;
@@ -22,6 +23,7 @@ h3 {
   border-color: var(--focus);
   font: var(--copy);
   font-size: 1rem;
+  display: block;
 }
 
 .article-box {
