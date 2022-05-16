@@ -25,7 +25,7 @@ loadMoreBtn.addEventListener("click", () => {
   fetchPosts();
 });
 
-// fetchPosts();
+fetchPosts();
 
 function createHTML(data) {
   content.innerHTML = "";
