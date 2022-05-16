@@ -147,11 +147,10 @@
   .article-box {
     margin-left: 3rem;
     margin-right: 3rem;
-    gap: 1rem;
   }
 
   .flex-layout {
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .card-heading {
