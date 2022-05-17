@@ -6,7 +6,7 @@ loadMoreBtn.style.display = "none";
 
 //call api
 let url =
-  "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?acf_format=standard";
+  "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=100&acf_format=standard";
 
 async function fetchPosts() {
   try {
@@ -35,11 +35,13 @@ async function fetchPosts() {
   }
 }
 
-//call api when load more btn clicked
+//display more posts when button clicked
 loadMoreBtn.addEventListener("click", () => {
-  url =
-    "https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=100&acf_format=standard";
-  fetchPosts();
+  const moreArticles = document.querySelectorAll(".post-card");
+  moreArticles.forEach((post) => {
+    post.classList.remove("hidden");
+  });
+  loadMoreBtn.style.display = "none";
 });
 
 fetchPosts();
@@ -72,7 +74,7 @@ function createHTML(data) {
                                 </div>
                                 </a>
                              </article>`;
-    } else if (i < data.length) {
+    } else if (i > 0 && i < 10) {
       content.innerHTML += `<article class="post-card">
                               <a href="../pages/article.html?id=${data[i].id}">
                               <h3 class="card-heading">${data[i].title.rendered}</h3>
@@ -94,11 +96,28 @@ function createHTML(data) {
                                     </a>
                                </article>
                                `;
-    }
-
-    //hide button when end of posts
-    if (i === 13) {
-      loadMoreBtn.style.display = "none";
+    } else if (i > 10 && i < data.length) {
+      content.innerHTML += `<article class="post-card hidden">
+                              <a href="../pages/article.html?id=${data[i].id}">
+                              <h3 class="card-heading">${data[i].title.rendered}</h3>
+                                    <div>
+                                        <img
+                                        class="post-img"
+                                        src="${data[i].acf.featured_img}"
+                                        />
+                                    </div>
+                                    <div>
+                                        <div>
+                                          <span class="tags">#${data[i].acf.tag_1}</span>
+                                          <span class="tags">#${data[i].acf.tag_2}</span>
+                                        </div>
+                                        <p>
+                                        ${data[i].acf.brief}
+                                        </p>
+                                    </div>
+                                    </a>
+                               </article>
+                               `;
     }
   }
 }

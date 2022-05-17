@@ -79,6 +79,10 @@ input[type="search"],
   margin: 3rem auto;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ---------- While loading ---------- */
 
 .ft-img-layout,
