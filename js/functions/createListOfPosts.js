@@ -50,7 +50,7 @@ export function createListOfPosts(data) {
                                       </a>
                                  </article>
                                  `;
-    } else if (i > 10 && i < data.length) {
+    } else if (i >= 10 && i < data.length) {
       content.innerHTML += `<article class="post-card hidden">
                                 <a href="../pages/article.html?id=${data[i].id}">
                                 <h3 class="card-heading">${data[i].title.rendered}</h3>
