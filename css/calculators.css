@@ -36,7 +36,9 @@ h2 {
 select {
   max-width: fit-content;
   height: 2rem;
-  margin: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 .error {
@@ -56,7 +58,9 @@ select {
 .number-value {
   width: 7rem;
   height: 2rem;
-  margin: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
 }
 
 .number-value::-webkit-inner-spin-button,
@@ -94,4 +98,25 @@ select {
 .lift-values {
   display: flex;
   flex-direction: column;
+}
+
+/* ---------- Hover info calc ---------- */
+.hover-icon {
+  color: var(--base);
+  position: relative;
+}
+
+.hover-icon:hover::before {
+  content: attr(data-hover);
+  font: var(--small);
+  width: 150px;
+  background-color: var(--white);
+  border: 1px solid var(--base);
+  padding: 1rem;
+  box-shadow: -3px 3px 6px grey;
+  position: absolute;
+  top: 50%;
+  left: 50;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
