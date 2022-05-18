@@ -14,12 +14,16 @@ h3 {
   color: var(--base);
 }
 
+.filter {
+  margin-left: 1rem;
+  font: var(--small);
+}
+
 input[type="search"],
 .tag-selector {
   margin-left: 1rem;
   margin-bottom: 2rem;
   height: 2rem;
-  width: 15rem;
   border-color: var(--focus);
   font: var(--copy);
   font-size: 1rem;

@@ -159,12 +159,13 @@
 
   /* ---------- List of articles ---------- */
   input[type="search"],
-  .tag-selector {
+  .tag-selector,
+  .filter,
+  .article-box {
     margin-left: 3rem;
   }
 
   .article-box {
-    margin-left: 3rem;
     margin-right: 3rem;
   }
 
@@ -172,13 +173,16 @@
     gap: 2rem;
   }
 
-  .card-heading {
+  .card-heading,
+  .ft-img-layout,
+  .post-img-layout {
     margin-left: 0;
     margin-right: 0;
   }
 
   .ft-post-img,
-  .post-img {
+  .post-img,
+  .tags-layout {
     margin-left: 0;
   }
 
@@ -194,16 +198,6 @@
 
   .post-card p {
     margin: 0;
-  }
-
-  .ft-img-layout,
-  .post-img-layout {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .tags-layout {
-    margin-left: 0;
   }
 
   /* ---------- Specific article ---------- */
@@ -241,6 +235,7 @@
   .lt-flex-layout {
     flex-wrap: nowrap;
   }
+
   .slider-card-box {
     width: 324px;
     flex-shrink: 0;
