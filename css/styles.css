@@ -104,6 +104,7 @@ nav a {
   transition: background-color 0.5s;
 }
 
+nav a:focus,
 nav a:hover,
 .active {
   background-color: var(--focus);
@@ -163,6 +164,7 @@ a {
   cursor: pointer;
 }
 
+.cta:focus,
 .cta:hover {
   box-shadow: none;
 }

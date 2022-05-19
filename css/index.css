@@ -33,6 +33,7 @@ h2 {
   transition: all 0.5s;
 }
 
+.slider-card:focus,
 .slider-card:hover {
   filter: brightness(0.5);
 }

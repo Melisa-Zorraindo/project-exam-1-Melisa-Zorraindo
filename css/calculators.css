@@ -101,11 +101,17 @@ select {
 }
 
 /* ---------- Hover info calc ---------- */
+.info-btn {
+  border: none;
+  background-color: transparent;
+}
+
 .hover-icon {
   color: var(--base);
   position: relative;
 }
 
+.info-btn:focus::before,
 .hover-icon:hover::before {
   content: attr(data-hover);
   font: var(--small);

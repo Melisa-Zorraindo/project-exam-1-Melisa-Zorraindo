@@ -50,7 +50,9 @@ input[type="search"],
   flex-wrap: wrap;
 }
 
+.ft-post-box:focus,
 .ft-post-box:hover,
+.post-card:focus,
 .post-card:hover {
   filter: brightness(0.5);
 }
