@@ -13,21 +13,25 @@ function validateForm(event) {
 
   if (checkLengths(name.value, 6)) {
     name.previousElementSibling.classList.add("warning");
+    document.querySelector("#name-field").focus();
     return false;
   }
 
   if (!checkEmail(email.value)) {
     email.previousElementSibling.classList.add("warning");
+    document.querySelector("#email-field").focus();
     return false;
   }
 
   if (checkLengths(subject.value, 16)) {
     subject.previousElementSibling.classList.add("warning");
+    document.querySelector("#subject-field").focus();
     return false;
   }
 
   if (checkLengths(message.value, 26)) {
     message.previousElementSibling.classList.add("warning");
+    document.querySelector("#message").focus();
     return false;
   }
 

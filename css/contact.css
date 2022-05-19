@@ -19,15 +19,15 @@ form {
   margin: 0 1rem;
 }
 
-span {
+label {
   font: var(--alt);
   color: var(--focus);
   display: block;
   margin-top: 1rem;
 }
-
-label {
+form p {
   font-size: 0.9rem;
+  margin: 0.25rem 0 0;
 }
 
 textarea,
@@ -37,6 +37,7 @@ textarea,
   height: 4rem;
   border: 1px solid grey;
   padding: 0;
+  margin-bottom: 1.5rem;
 }
 
 .field {
