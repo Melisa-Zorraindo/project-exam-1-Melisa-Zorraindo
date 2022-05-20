@@ -47,7 +47,7 @@ function createHTML(data) {
                 <h3 class="slider-card-info">
                     ${post.title.rendered}
                   </h3>
-                  <div class="slider-card-img" style="background-image:url('${post.acf.featured_img}')"></div>
+                  <div class="slider-card-img" style="background-image:url('${post.acf.featured_img.url}')" alt="${post.acf.featured_img.alt}"></div>
                   <div>
                     <span class="tags">#${post.acf.tag_1}</span>
                     <span class="tags">#${post.acf.tag_2}</span>

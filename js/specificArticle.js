@@ -33,8 +33,9 @@ function renderHTML(data) {
                                     <h1>${data.acf.subtitle}</h1>
                                     <h2>${data.title.rendered}</h2>
                                     <img
+                                        alt="${data.acf.featured_img.alt}"
                                         class="featured-img"
-                                        src="${data.acf.featured_img}"
+                                        src="${data.acf.featured_img.url}"
                                     />
                                     <div class="extra-info">
                                         <span class="tags">#${data.acf.tag_1}</span>

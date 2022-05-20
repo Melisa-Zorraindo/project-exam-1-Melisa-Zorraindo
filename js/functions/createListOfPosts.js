@@ -13,8 +13,9 @@ export function createListOfPosts(data) {
                               <h3 class="card-heading">${data[0].title.rendered}</h3>
                                   <div>
                                       <img
+                                          alt="${data[0].acf.featured_img.alt}"
                                           class="ft-post-img"
-                                          src="${data[0].acf.featured_img}"
+                                          src="${data[0].acf.featured_img.url}"
                                       />
                                   </div>
                                   <div>
@@ -34,8 +35,9 @@ export function createListOfPosts(data) {
                                 <h3 class="card-heading">${data[i].title.rendered}</h3>
                                       <div>
                                           <img
+                                          alt="${data[i].acf.featured_img.alt}"
                                           class="post-img"
-                                          src="${data[i].acf.featured_img}"
+                                          src="${data[i].acf.featured_img.url}"
                                           />
                                       </div>
                                       <div>
@@ -56,8 +58,9 @@ export function createListOfPosts(data) {
                                 <h3 class="card-heading">${data[i].title.rendered}</h3>
                                       <div>
                                           <img
+                                          alt="${data[i].acf.featured_img.alt}"
                                           class="post-img"
-                                          src="${data[i].acf.featured_img}"
+                                          src="${data[i].acf.featured_img.url}"
                                           />
                                       </div>
                                       <div>
