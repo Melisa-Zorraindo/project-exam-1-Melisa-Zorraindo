@@ -25,6 +25,7 @@ label {
   display: block;
   margin-top: 1rem;
 }
+
 form p {
   font-size: 0.9rem;
   margin: 0.25rem 0 0;
@@ -51,6 +52,7 @@ textarea,
 
 .warning {
   color: red;
+  font-weight: 700;
 }
 
 .success-message {
