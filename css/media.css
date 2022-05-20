@@ -22,6 +22,9 @@
   nav {
     position: static;
     border-bottom: none;
+  }
+
+  .nav-mobile {
     transform: translateY(0);
   }
 

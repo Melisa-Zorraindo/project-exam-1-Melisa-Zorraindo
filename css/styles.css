@@ -80,10 +80,14 @@ footer {
 nav {
   background-color: var(--decor);
   border-bottom: 2px solid var(--primary);
+  transition: all 1s ease;
+  position: relative;
+}
+
+.nav-mobile {
   position: absolute;
   width: 100%;
   transform: translateY(-200%);
-  transition: transform 1s ease;
   /* needed for very small screens not to fall behind the featured image on article specific page */
   z-index: 20;
 }
