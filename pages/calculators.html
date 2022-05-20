@@ -15,20 +15,25 @@
       crossorigin="anonymous"
     ></script>
     <link href="/css/styles.css" rel="stylesheet" />
-    <link href="/css/calculators.css" rel="stylesheet"/>
+    <link href="/css/calculators.css" rel="stylesheet" />
     <link href="/css/media.css" rel="stylesheet" />
     <link rel="icon" href="/assets/images/favicon.png" />
     <title>FitFactory | Calculators</title>
     <!-- Hotjar Tracking Code for https://fitfactory-noroff-project.netlify.app/ -->
     <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:2964292,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2964292, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
   </head>
   <body>
@@ -66,106 +71,202 @@
     </header>
     <main>
       <div class="main-content-calculators-page">
-      <div class="calculator-box tdee-calculator">
-        <h1>calculate your tdee</h1>
-        <h2>
-          How much should I be eating?
-        </h2>
-        <div>
-          <span class="field-heading">system</span>
-          <label for="metric">Metric</label>
-          <input type="radio" id="metric" value="metric" name="system" checked/>
-          <label for="imperial">Imperial</label>
-          <input type="radio" id="imperial" value="imperial" name="system" />
-        </div>
-        <select name="gender" id="gender-select"/>
-          <option value="">Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <input class="number-value" id="age" value="" placeholder="Age" type="number">
-        <small class="error-message error-age hidden">must be a number between 1 and 80</small>
-        <input class="number-value" id="body-weight" value="" placeholder="Weight in KG" type="number">
-        <small class="error-message error-weight hidden">must be a number between 40 and 160</small>
-        <input class="number-value" id="height" value="" placeholder="Height in CM" type="number">
-        <small class="error-message error-height hidden">must be a number between 130 and 230</small>
-        <select name="activity-level" id="activity-select" />
-          <option value="">Select activity level</option>
-          <option value="2">Sedentary (office job)</option>
-          <option value="4">Light exercise (1/2 days a week)</option>
-          <option value="5">Moderate exercise (3/5 days a week)</option>
-          <option value="6">Heavy exercise (6/7 days a week)</option>
-        </select>
-        <select name="goal" id="goal-select" />
-          <option value="">Select a goal</option>
-          <option value="mildlose">Lose weight</option>
-          <option value="maintain">Maintain</option>
-          <option value="mildgain">Gain weight</option>
-        </select>
-        <div class="results">
-        </div>
-        <button aria-label="calculate your tdee" class="cta" id="tdee-btn">calculate</button>
-      </div>
-      <div class="calculator-box rpe-calculator">
-        <h1>calculate your rpe</h1>
-        <h2>
-          How much can I lift?
-        </h2>
-        <div class="rpe-box">
-        <div class="lift-values">
-          <span class="field-heading">i lifted</span>
+        <div class="calculator-box tdee-calculator">
+          <h1>calculate your tdee</h1>
+          <h2>How much should I be eating?</h2>
           <div>
-           <input class="number-value" type="number" value="" id="lifted-weight" placeholder="Weight in KG">
-           <sup><button class="info-btn" data-hover="Enter your weight in KG"><i class="far fa-question-circle hover-icon" data-hover="Enter your weight in KG"></i></button></sup>
-          </div> 
-          <div>
-           <input class="number-value" type="number" value="" id="performed-reps" placeholder="Reps">
-           <sup><button class="info-btn" data-hover="Enter number of repetitions achieved"><i class="far fa-question-circle hover-icon" data-hover="Enter number of repetitions achieved"></i></button></sup>
+            <span class="field-heading">system</span>
+            <label for="metric">Metric</label>
+            <input
+              type="radio"
+              id="metric"
+              value="metric"
+              name="system"
+              checked
+            />
+            <label for="imperial">Imperial</label>
+            <input type="radio" id="imperial" value="imperial" name="system" />
           </div>
-          <small class="error-message lifted-reps-error hidden">must be a number between 1 and 12</small>
-          <div>
-          <select name="rpe-values" id="reached-rpe" /> 
-            <option value="">RPE</option>
-            <option value="0">10</option>
-            <option value="1">9.5</option>
-            <option value="2">9</option>
-            <option value="3">8.5</option>
-            <option value="4">8</option>
-            <option value="5">7.5</option>
-            <option value="6">7</option>
-            <option value="7">6.5</option>
+          <select name="gender" id="gender-select">
+            <option value="">Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
           </select>
-          <sup><button class="info-btn" data-hover="Rate of Perceived Exertion. Runs from 1 to 10, 10 matching your hardest effort. An RPE of 10 means you couldn't have performed any more reps. An RPE of 9 means you had 1 rep left. Etc."><i class="far fa-question-circle hover-icon" data-hover="Rate of Perceived Exertion. Runs from 1 to 10, 10 matching your hardest effort. An RPE of 10 means you couldn't have performed any more reps. An RPE of 9 means you had 1 rep left. Etc."></i></button></sup>
+          <input
+            class="number-value"
+            id="age"
+            value=""
+            placeholder="Age"
+            type="number"
+          />
+          <small class="error-message error-age hidden"
+            >must be a number between 1 and 80</small
+          >
+          <input
+            class="number-value"
+            id="body-weight"
+            value=""
+            placeholder="Weight in KG"
+            type="number"
+          />
+          <small class="error-message error-weight hidden"
+            >must be a number between 40 and 160</small
+          >
+          <input
+            class="number-value"
+            id="height"
+            value=""
+            placeholder="Height in CM"
+            type="number"
+          />
+          <small class="error-message error-height hidden"
+            >must be a number between 130 and 230</small
+          >
+          <select name="activity-level" id="activity-select">
+            <option value="">Select activity level</option>
+            <option value="2">Sedentary (office job)</option>
+            <option value="4">Light exercise (1/2 days a week)</option>
+            <option value="5">Moderate exercise (3/5 days a week)</option>
+            <option value="6">Heavy exercise (6/7 days a week)</option>
+          </select>
+          <select name="goal" id="goal-select">
+            <option value="">Select a goal</option>
+            <option value="mildlose">Lose weight</option>
+            <option value="maintain">Maintain</option>
+            <option value="mildgain">Gain weight</option>
+          </select>
+          <div class="results"></div>
+          <button aria-label="calculate your tdee" class="cta" id="tdee-btn">
+            calculate
+          </button>
+        </div>
+        <div class="calculator-box rpe-calculator">
+          <h1>calculate your rpe</h1>
+          <h2>How much can I lift?</h2>
+          <div class="rpe-box">
+            <div class="lift-values">
+              <span class="field-heading">i lifted</span>
+              <div>
+                <input
+                  class="number-value"
+                  type="number"
+                  value=""
+                  id="lifted-weight"
+                  placeholder="Weight in KG"
+                />
+                <sup
+                  ><button
+                    class="info-btn"
+                    data-hover="Enter your weight in KG"
+                  >
+                    <i
+                      class="far fa-question-circle hover-icon"
+                      data-hover="Enter your weight in KG"
+                    ></i></button
+                ></sup>
+              </div>
+              <div>
+                <input
+                  class="number-value"
+                  type="number"
+                  value=""
+                  id="performed-reps"
+                  placeholder="Reps"
+                />
+                <sup
+                  ><button
+                    class="info-btn"
+                    data-hover="Enter number of repetitions achieved"
+                  >
+                    <i
+                      class="far fa-question-circle hover-icon"
+                      data-hover="Enter number of repetitions achieved"
+                    ></i></button
+                ></sup>
+              </div>
+              <small class="error-message lifted-reps-error hidden"
+                >must be a number between 1 and 12</small
+              >
+              <div>
+                <select name="rpe-values" id="reached-rpe">
+                  <option value="">RPE</option>
+                  <option value="0">10</option>
+                  <option value="1">9.5</option>
+                  <option value="2">9</option>
+                  <option value="3">8.5</option>
+                  <option value="4">8</option>
+                  <option value="5">7.5</option>
+                  <option value="6">7</option>
+                  <option value="7">6.5</option>
+                </select>
+                <sup
+                  ><button
+                    class="info-btn"
+                    data-hover="Rate of Perceived Exertion. Runs from 1 to 10, 10 matching your hardest effort. An RPE of 10 means you couldn't have performed any more reps. An RPE of 9 means you had 1 rep left. Etc."
+                  >
+                    <i
+                      class="far fa-question-circle hover-icon"
+                      data-hover="Rate of Perceived Exertion. Runs from 1 to 10, 10 matching your hardest effort. An RPE of 10 means you couldn't have performed any more reps. An RPE of 9 means you had 1 rep left. Etc."
+                    ></i></button
+                ></sup>
+              </div>
+              <span class="field-heading" id="rm-result"></span>
+            </div>
+            <div class="lift-values">
+              <span class="field-heading">i want to lift</span>
+              <div>
+                <input
+                  class="number-value"
+                  type="text"
+                  value=""
+                  id="desired-reps"
+                  placeholder="Reps"
+                />
+                <sup
+                  ><button
+                    class="info-btn"
+                    data-hover="Enter number of repetitions you want to perform"
+                  >
+                    <i
+                      class="far fa-question-circle hover-icon"
+                      data-hover="Enter number of repetitions you want to perform"
+                    ></i></button
+                ></sup>
+              </div>
+              <small class="error-message desired-reps-error hidden"
+                >must be a number between 1 and 12</small
+              >
+              <div>
+                <select name="desired-rpe-values" id="desired-rpe">
+                  <option value="">RPE</option>
+                  <option value="0">10</option>
+                  <option value="1">9.5</option>
+                  <option value="2">9</option>
+                  <option value="3">8.5</option>
+                  <option value="4">8</option>
+                  <option value="5">7.5</option>
+                  <option value="6">7</option>
+                  <option value="7">6.5</option>
+                </select>
+                <sup
+                  ><button
+                    class="info-btn"
+                    data-hover="Enter RPE at which you want to perform"
+                  >
+                    <i
+                      class="far fa-question-circle hover-icon"
+                      data-hover="Enter RPE at which you want to perform"
+                    ></i></button
+                ></sup>
+              </div>
+              <span class="field-heading" id="weight-result"></span>
+            </div>
           </div>
-          <span class="field-heading" id="rm-result"></span>
+          <button aria-label="calculate your rpe" class="cta" id="rpe-btn">
+            calculate
+          </button>
         </div>
-        <div class="lift-values">
-        <span class="field-heading">i want to lift</span>
-        <div>
-        <input class="number-value" type="text" value="" id="desired-reps" placeholder="Reps">
-        <sup><button class="info-btn" data-hover="Enter number of repetitions you want to perform"><i class="far fa-question-circle hover-icon" data-hover="Enter number of repetitions you want to perform"></i></button></sup>
-        </div>
-        <small class="error-message desired-reps-error hidden">must be a number between 1 and 12</small>
-        <div>
-        <select name="desired-rpe-values" id="desired-rpe"/>
-          <option value="">RPE</option>
-          <option value="0">10</option>
-          <option value="1">9.5</option>
-          <option value="2">9</option>
-          <option value="3">8.5</option>
-          <option value="4">8</option>
-          <option value="5">7.5</option>
-          <option value="6">7</option>
-          <option value="7">6.5</option>
-        </select>
-        <sup><button class="info-btn" data-hover="Enter RPE at which you want to perform"><i class="far fa-question-circle hover-icon" data-hover="Enter RPE at which you want to perform"></i></button></sup>
-        </div>
-        <span class="field-heading" id="weight-result"></span>
-       </div>
       </div>
-        <button aria-label="calculate your rpe" class="cta" id="rpe-btn">calculate</button>
-      </div>
-    </div>
     </main>
     <footer>&copy; Melisa Zorraindo | Copyright 2022</footer>
     <script src="/js/functions/navMenu.js"></script>
