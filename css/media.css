@@ -243,7 +243,7 @@
 
   .track {
     flex-wrap: nowrap;
-    transition: transform 1.7s;
+    transition: transform 1s;
   }
 
   .lt-flex-layout {

@@ -63,8 +63,9 @@ let index = 0;
 next.addEventListener("click", () => {
   index++;
   prev.disabled = false;
-  track.style.transform = `translateX(-${index * carouselWidth}px)`;
-  if (track.offsetWidth - index * carouselWidth < carouselWidth) {
+  // track.style.transform = `translateX(-${index * carouselWidth}px)`;
+  track.style.transform = `translateX(-${index * 340}px)`;
+  if (track.offsetWidth - index * 340 < carouselWidth) {
     next.disabled = true;
   }
 });
@@ -72,8 +73,13 @@ next.addEventListener("click", () => {
 prev.addEventListener("click", () => {
   index--;
   next.disabled = false;
-  track.style.transform = `translateX(-${index * carouselWidth}px)`;
+  // track.style.transform = `translateX(-${index * carouselWidth}px)`;
+  track.style.transform = `translateX(-${index * 340}px)`;
   if (index === 0) {
     prev.disabled = true;
   }
 });
+
+/* if (track.offsetWidth - index * carouselWidth < carouselWidth){
+    next.disabled = true;
+  } */
