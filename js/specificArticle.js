@@ -1,3 +1,4 @@
+import { displayErrorMessage } from "./functions/errorMessage.js";
 const articleContainer = document.querySelector(".main-content");
 const newTitle = document.querySelector("title");
 const queryString = document.location.search;
@@ -18,6 +19,7 @@ async function getArticle() {
     const data = await response.json();
     renderHTML(data[0]);
   } catch (error) {
+    displayErrorMessage(articleContainer);
     console.log(error);
   }
 }

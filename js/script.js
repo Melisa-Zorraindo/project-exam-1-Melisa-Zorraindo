@@ -57,7 +57,7 @@ function createHTML(data) {
   });
 }
 
-//functionality for next and previous buttons desktop
+//functionality for slider desktop
 let index = 0;
 
 next.addEventListener("click", () => {

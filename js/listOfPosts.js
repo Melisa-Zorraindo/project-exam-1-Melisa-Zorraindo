@@ -1,6 +1,7 @@
 import { searchPosts } from "./functions/searchPosts.js";
 import { filterByTag } from "./functions/filterByTag.js";
 import { createListOfPosts } from "./functions/createListOfPosts.js";
+import { displayErrorMessage } from "./functions/errorMessage.js";
 
 //hide the button while the api is being called
 const loadMoreBtn = document.querySelector(".cta");
@@ -22,6 +23,8 @@ async function fetchPosts() {
     //search posts in search bar
     searchPosts(data);
   } catch (error) {
+    const content = document.querySelector(".article-box");
+    displayErrorMessage(content);
     console.log(error);
   }
 }

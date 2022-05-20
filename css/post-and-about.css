@@ -102,3 +102,11 @@ figure img:hover {
 .hidden {
   display: none;
 }
+
+/* ---------- Error ----------*/
+.error-message {
+  margin: auto;
+  width: 100%;
+  border: 1px solid red;
+  text-align: center;
+}

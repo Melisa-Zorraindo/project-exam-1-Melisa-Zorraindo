@@ -123,6 +123,11 @@
     max-width: 60%;
   }
 
+  /* ---------- Error ----------*/
+  .error-message p {
+    max-width: 100%;
+  }
+
   /* ---------- Calculators ---------- */
 
   .tdee-calculator,
