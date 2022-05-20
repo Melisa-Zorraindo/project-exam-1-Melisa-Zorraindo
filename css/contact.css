@@ -50,6 +50,7 @@ textarea,
   margin-left: 0;
 }
 
+.required-field,
 .warning {
   color: red;
   font-weight: 700;

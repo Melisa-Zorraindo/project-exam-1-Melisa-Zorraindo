@@ -69,17 +69,17 @@
         <h1>have you got any questions?</h1>
         <h2>Get in touch with me</h2>
         <form action="" class="contact-form">
-          <label for="name-field">name</label>
-          <p>Must be more than five characters long</p>
+          <label for="name-field">name<span class="required-field">*</span></label>
+          <p>Must be at least 6 characters long</p>
           <input class="field" type="text" id="name-field" />
-          <label for="email-field">email</label>
+          <label for="email-field">email<span class="required-field">*</span></label>
           <p>Must be a valid email address</p>
           <input class="field" type="text" id="email-field" />
-          <label for="subject-field">subject</label>
-          <p>Must be more than 15 characters long</p>
+          <label for="subject-field">subject<span class="required-field">*</span></label>
+          <p>Must be at least 16 characters long</p>
           <input class="field" type="text" id="subject-field" />
-          <label for="message">message</label>
-          <p>Must be more than 25 characters long</p>
+          <label for="message">message<span class="required-field">*</span></label>
+          <p>Must be at least 26 characters long</p>
           <textarea id="message"></textarea>
           <button aria-label="submit form" class="cta"/>submit</button>
         </form>
