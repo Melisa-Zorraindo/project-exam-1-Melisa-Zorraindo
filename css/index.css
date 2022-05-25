@@ -80,6 +80,23 @@ h2 {
   border-bottom-right-radius: 0;
 }
 
+/*-- my buttons --*/
+.slider-nav {
+  margin: 3rem auto;
+  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-nav button {
+  border: none;
+  color: var(--focus);
+  font-size: 2rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 /* ---------- While loading ---------- */
 
 .lt-flex-layout {

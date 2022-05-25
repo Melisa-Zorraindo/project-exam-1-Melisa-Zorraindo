@@ -1,6 +1,36 @@
 //select elements in the dom
+const prevButton = document.querySelector(".prev");
+const nextButton = document.querySelector(".next");
 const slider = document.querySelector(".slider");
-document.addEventListener("click", (e) => {
+
+prevButton.addEventListener("click", () => {
+  const sliderIndex = parseInt(
+    getComputedStyle(slider).getPropertyValue("--slider-index")
+  );
+  if (sliderIndex === 0) {
+    prev.disabled = true;
+  }
+  slider.style.setProperty("--slider-index", sliderIndex - 1);
+});
+
+const browserSize = window.outerWidth;
+nextButton.addEventListener("click", () => {
+  const sliderIndex = parseInt(
+    getComputedStyle(slider).getPropertyValue("--slider-index")
+  );
+  if (browserSize <= 699 && sliderIndex === 11) {
+    next.disabled = true;
+  } else if (browserSize <= 999 && sliderIndex === 5) {
+    next.disabled = true;
+  } else if (browserSize <= 1199 && sliderIndex === 3) {
+    next.disabled = true;
+  } else if (browserSize > 1199 && sliderIndex === 2) {
+    next.disabled = true;
+  }
+  slider.style.setProperty("--slider-index", sliderIndex + 1);
+});
+
+/* document.addEventListener("click", (e) => {
   let handle;
   if (e.target.matches(".handle")) {
     handle = e.target;
@@ -11,9 +41,9 @@ document.addEventListener("click", (e) => {
   if (handle != null) {
     onHandleClick(handle);
   }
-});
+}); */
 
-function onHandleClick(handle) {
+/* function onHandleClick(handle) {
   const slider = handle.closest(".container").querySelector(".slider");
   const sliderIndex = parseInt(
     getComputedStyle(slider).getPropertyValue("--slider-index")
@@ -23,29 +53,8 @@ function onHandleClick(handle) {
   } else if (handle.classList.contains("right-handle")) {
     slider.style.setProperty("--slider-index", sliderIndex + 1);
   }
-}
-/* const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-const track = document.querySelector(".track");
-let carouselWidth = document.querySelector(".slider-box").offsetWidth; */
-
-//get browser size and set variables for different screen sizes
-// const browserSize = window.outerWidth;
-//render number of cards according to screen size
-/* let itemsPerPage;
-if (browserSize <= 699) {
-  itemsPerPage = 3;
-} else if (browserSize >= 700 && browserSize <= 1311) {
-  itemsPerPage = 6;
-} else if (browserSize >= 1312 && browserSize <= 1359) {
-  itemsPerPage = 8;
-} else if (browserSize >= 1360) {
-  itemsPerPage = 12;
-  //make buttons available
-  next.style.display = "block";
-  prev.style.display = "block";
-  prev.disabled = true;
 } */
+
 let url = `https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=12&acf_format=standard`;
 
 //call api
@@ -78,30 +87,3 @@ function createHTML(data) {
             `;
   });
 }
-
-//functionality for slider desktop
-/* let index = 0;
-
-next.addEventListener("click", () => {
-  index++;
-  prev.disabled = false;
-  // track.style.transform = `translateX(-${index * carouselWidth}px)`;
-  track.style.transform = `translateX(-${index * 340}px)`;
-  if (track.offsetWidth - index * 340 < carouselWidth) {
-    next.disabled = true;
-  }
-});
-
-prev.addEventListener("click", () => {
-  index--;
-  next.disabled = false;
-  // track.style.transform = `translateX(-${index * carouselWidth}px)`;
-  track.style.transform = `translateX(-${index * 340}px)`;
-  if (index === 0) {
-    prev.disabled = true;
-  }
-}); */
-
-/* if (track.offsetWidth - index * carouselWidth < carouselWidth){
-    next.disabled = true;
-  } */
