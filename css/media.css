@@ -38,6 +38,11 @@
   .number-value {
     font-size: 0.7rem;
   }
+
+  .info-btn:focus::before,
+  .hover-icon:hover::before {
+    width: 100px;
+  }
 }
 
 @media only screen and (min-width: 700px) {

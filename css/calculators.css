@@ -118,8 +118,8 @@ select,
   padding: 1rem;
   box-shadow: -3px 3px 6px grey;
   position: absolute;
-  top: 50%;
-  left: 50;
-  transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 }
