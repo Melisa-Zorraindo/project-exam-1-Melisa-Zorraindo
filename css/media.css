@@ -41,27 +41,9 @@
   }
 
   /* ---------- Slider homepage ---------- */
-  .track {
-    display: inline-flex;
-    gap: 1rem;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
 
-  .lt-flex-layout {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    gap: 1rem;
-    margin: auto;
-  }
-
-  .slider-card-box,
-  .lt-post-img-layout {
-    width: 300px;
+  .slider {
+    --items-per-screen: 2;
   }
 
   /* ---------- List of articles ---------- */
@@ -104,6 +86,11 @@
 @media only screen and (min-width: 1000px) {
   p {
     max-width: 60%;
+  }
+
+  /* ---------- Slider home page ---------- */
+  .slider {
+    --items-per-screen: 3;
   }
 
   /* ---------- List of articles ---------- */
@@ -164,11 +151,8 @@
     max-width: 93%;
   }
 
-  /* ---------- Homepage ---------- */
-  .slider,
-  .lt-flex-layout {
-    margin-left: 3rem;
-    margin-right: 3rem;
+  .slider {
+    --items-per-screen: 4;
   }
 
   /* ---------- List of articles ---------- */
@@ -233,46 +217,5 @@
   .calculator-box h1,
   .calculator-box h2 {
     margin-left: 1rem;
-  }
-}
-
-@media only screen and (min-width: 1360px) {
-  .slider-box {
-    width: 1360px;
-  }
-
-  .track {
-    flex-wrap: nowrap;
-    transition: transform 1s;
-  }
-
-  .lt-flex-layout {
-    flex-wrap: nowrap;
-  }
-
-  .slider-card-box {
-    width: 324px;
-    flex-shrink: 0;
-  }
-
-  .slider-nav {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
-  }
-
-  .slider-nav button {
-    font-size: 2.5rem;
-    background-color: transparent;
-    color: var(--focus);
-    border: none;
-    cursor: pointer;
-  }
-
-  .prev:disabled,
-  .next:disabled {
-    color: var(--shade);
-    cursor: auto;
   }
 }
