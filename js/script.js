@@ -20,9 +20,9 @@ nextButton.addEventListener("click", () => {
   );
   if (browserSize <= 699 && sliderIndex === 11) {
     next.disabled = true;
-  } else if (browserSize <= 999 && sliderIndex === 5) {
+  } else if (browserSize > 699 && browserSize <= 999 && sliderIndex === 5) {
     next.disabled = true;
-  } else if (browserSize <= 1199 && sliderIndex === 3) {
+  } else if (browserSize > 999 && browserSize <= 1199 && sliderIndex === 3) {
     next.disabled = true;
   } else if (browserSize > 1199 && sliderIndex === 2) {
     next.disabled = true;

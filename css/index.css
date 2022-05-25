@@ -30,7 +30,7 @@ h2 {
   display: flex;
   transform: translateX(calc(var(--slider-index) * -100%));
   margin: 0 0.25rem;
-  transition: transform 250ms ease-in-out;
+  transition: transform 1s;
   width: 90%;
 }
 
