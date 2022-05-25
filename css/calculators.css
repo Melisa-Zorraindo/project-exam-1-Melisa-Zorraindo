@@ -33,7 +33,8 @@ h2 {
   margin-left: 1rem;
 }
 
-select {
+select,
+.number-value {
   max-width: fit-content;
   height: 2rem;
   margin-top: 0.5rem;
@@ -57,10 +58,6 @@ select {
 
 .number-value {
   width: 7rem;
-  height: 2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: 1rem;
 }
 
 .number-value::-webkit-inner-spin-button,

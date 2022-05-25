@@ -40,11 +40,15 @@ function renderHTML(data) {
                                         src="${data.acf.featured_img.url}"
                                     />
                                     <div class="extra-info">
+                                      <div>
                                         <span class="tags">#${data.acf.tag_1}</span>
                                         <span class="tags">#${data.acf.tag_2}</span>
+                                      </div>
+                                      <div>
                                         <span class="tags reading-time"
                                         ><i class="fas fa-clock"></i> ${data.acf.reading_time}</span
                                         >
+                                      </div>
                                     </div>
                                     <p>
                                         ${data.content.rendered}

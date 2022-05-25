@@ -7,10 +7,36 @@
     width: 150px;
   }
 
+  /* ---------- Home slider ---------- */
+
+  :root {
+    --copy: 0.84rem/1.7 "Lato", sans-serif;
+    --nav: small-caps 0.91rem "Lato", sans-serif;
+    --heading: 1.54rem "Oswald", sans-serif;
+    --h2: 1.4rem "Oswald", sans-serif;
+    --h3: 1.12rem "Oswald", sans-serif;
+    --cta: small-caps 0.945rem "Oswald", sans-serif;
+    --subheading: small-caps 1.12rem "Oswald", sans-serif;
+    --alt: small-caps 0.91rem "Oswald", sans-serif;
+    --link: 700 0.84rem "Lato", sans-serif;
+    --small: 0.675rem "Lato", sans-serif;
+  }
+
   /* ---------- List of articles ---------- */
   input[type="search"],
   .tag-selector {
     width: fit-content;
+  }
+
+  /* ---------- Specific article ---------- */
+  .extra-info {
+    flex-direction: column;
+  }
+
+  /* ---------- Calculators ---------- */
+  select,
+  .number-value {
+    font-size: 0.7rem;
   }
 }
 
