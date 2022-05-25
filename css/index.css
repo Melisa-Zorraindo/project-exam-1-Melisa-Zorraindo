@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.open-menu,
+.close-menu {
+  margin-left: 2rem;
+}
+
 body {
   margin: 0;
 }
