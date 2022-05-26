@@ -22,13 +22,19 @@ tdeeBtn.addEventListener("click", validateFields);
 
 //system selection
 metricSystem.addEventListener("change", () => {
+  //clear weight placeholder and give it a new one
+  weightField.value = "";
   weightField.placeholder = "Weight in KG";
+  //get height fields redy for validation
   heightField.classList.remove("hidden");
   heightSelect.classList.add("hidden");
 });
 
 imperialSystem.addEventListener("change", () => {
+  //clear weight placeholder and give it a new one
+  weightField.value = "";
   weightField.placeholder = "Weight in lbs";
+  //get height fields redy for validation
   heightSelect.classList.remove("hidden");
   heightField.classList.add("hidden");
 });
