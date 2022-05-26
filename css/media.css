@@ -33,6 +33,12 @@
     width: fit-content;
   }
 
+  .ft-heading-layout,
+  .ft-img-layout,
+  .post-img-layout {
+    width: 200px;
+  }
+
   /* ---------- Specific article ---------- */
   .extra-info {
     flex-direction: column;
@@ -133,6 +139,10 @@
     height: 300px;
   }
 
+  .ft-heading-layout {
+    flex: 0 0 600px;
+  }
+
   .ft-post-box p {
     max-width: 450px;
   }
@@ -204,6 +214,8 @@
     gap: 2rem;
   }
 
+  .ft-heading-layout,
+  .heading-layout,
   .card-heading,
   .ft-img-layout,
   .post-img-layout {
