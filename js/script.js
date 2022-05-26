@@ -4,13 +4,20 @@ const nextButton = document.querySelector(".next");
 const slider = document.querySelector(".slider");
 const sliderNav = document.querySelector(".slider-nav");
 
+//disable the prev button when page refresh
+prevButton.disabled = true;
+
 //next and prev buttons functionality
 prevButton.addEventListener("click", () => {
+  //enable next button
+  nextButton.disabled = false;
   const sliderIndex = parseInt(
     getComputedStyle(slider).getPropertyValue("--slider-index")
   );
-  if (sliderIndex === 0) {
-    prev.disabled = true;
+
+  console.log(sliderIndex);
+  if (sliderIndex === 1) {
+    prevButton.disabled = true;
   }
   slider.style.setProperty("--slider-index", sliderIndex - 1);
 });
@@ -18,45 +25,25 @@ prevButton.addEventListener("click", () => {
 //enable disable buttons when end of carousel
 const browserSize = window.outerWidth;
 nextButton.addEventListener("click", () => {
+  //enable prev button
+  prevButton.disabled = false;
+
   const sliderIndex = parseInt(
     getComputedStyle(slider).getPropertyValue("--slider-index")
   );
-  if (browserSize <= 699 && sliderIndex === 11) {
-    next.disabled = true;
-  } else if (browserSize > 699 && browserSize <= 999 && sliderIndex === 5) {
-    next.disabled = true;
-  } else if (browserSize > 999 && browserSize <= 1199 && sliderIndex === 3) {
-    next.disabled = true;
-  } else if (browserSize > 1199 && sliderIndex === 2) {
-    next.disabled = true;
+
+  console.log(sliderIndex);
+  if (browserSize <= 699 && sliderIndex === 10) {
+    nextButton.disabled = true;
+  } else if (browserSize > 699 && browserSize <= 999 && sliderIndex === 4) {
+    nextButton.disabled = true;
+  } else if (browserSize > 999 && browserSize <= 1199 && sliderIndex === 2) {
+    nextButton.disabled = true;
+  } else if (browserSize > 1199 && sliderIndex === 1) {
+    nextButton.disabled = true;
   }
   slider.style.setProperty("--slider-index", sliderIndex + 1);
 });
-
-/* document.addEventListener("click", (e) => {
-  let handle;
-  if (e.target.matches(".handle")) {
-    handle = e.target;
-  } else {
-    handle = e.target.closest(".handle");
-  }
-
-  if (handle != null) {
-    onHandleClick(handle);
-  }
-}); */
-
-/* function onHandleClick(handle) {
-  const slider = handle.closest(".container").querySelector(".slider");
-  const sliderIndex = parseInt(
-    getComputedStyle(slider).getPropertyValue("--slider-index")
-  );
-  if (handle.classList.contains("left-handle")) {
-    slider.style.setProperty("--slider-index", sliderIndex - 1);
-  } else if (handle.classList.contains("right-handle")) {
-    slider.style.setProperty("--slider-index", sliderIndex + 1);
-  }
-} */
 
 let url = `https://fitfactory.melisazor.com/wordpress/wp-json/wp/v2/articles?per_page=12&acf_format=standard`;
 
@@ -138,7 +125,6 @@ function simulateLayout() {
 simulateLayout();
 
 //display navigation carousel when slider loaded
-
 function displayNav() {
   sliderNav.style.display = "flex";
 }
