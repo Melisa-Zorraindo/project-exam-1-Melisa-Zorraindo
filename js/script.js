@@ -2,7 +2,9 @@
 const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 const slider = document.querySelector(".slider");
+const sliderNav = document.querySelector(".slider-nav");
 
+//next and prev buttons functionality
 prevButton.addEventListener("click", () => {
   const sliderIndex = parseInt(
     getComputedStyle(slider).getPropertyValue("--slider-index")
@@ -13,6 +15,7 @@ prevButton.addEventListener("click", () => {
   slider.style.setProperty("--slider-index", sliderIndex - 1);
 });
 
+//enable disable buttons when end of carousel
 const browserSize = window.outerWidth;
 nextButton.addEventListener("click", () => {
   const sliderIndex = parseInt(
@@ -62,8 +65,8 @@ async function fetchPosts() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     createHTML(data);
+    displayNav();
   } catch (error) {
     console.log(error);
   }
@@ -86,4 +89,56 @@ function createHTML(data) {
               </a>
             `;
   });
+}
+
+//loader
+function simulateLayout() {
+  slider.innerHTML = `<div class="layout-slider">
+                        <div class="layout-slider-card">
+                          <div class="layout-heading"></div>
+                          <div class="layout-img"></div>
+                          <div class="layout-tag-box">
+                            <div class="layout-tags"></div>
+                            <div class="layout-tags"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="layout-slider">
+                        <div class="layout-slider-card">
+                          <div class="layout-heading"></div>
+                          <div class="layout-img"></div>
+                          <div class="layout-tag-box">
+                            <div class="layout-tags"></div>
+                            <div class="layout-tags"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="layout-slider">
+                        <div class="layout-slider-card">
+                          <div class="layout-heading"></div>
+                          <div class="layout-img"></div>
+                          <div class="layout-tag-box">
+                            <div class="layout-tags"></div>
+                            <div class="layout-tags"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="layout-slider">
+                        <div class="layout-slider-card">
+                          <div class="layout-heading"></div>
+                          <div class="layout-img"></div>
+                          <div class="layout-tag-box">
+                            <div class="layout-tags"></div>
+                            <div class="layout-tags"></div>
+                          </div>
+                        </div>
+                      </div>`;
+}
+
+simulateLayout();
+
+//display navigation carousel when slider loaded
+
+function displayNav() {
+  sliderNav.style.display = "flex";
 }

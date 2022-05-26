@@ -7,7 +7,7 @@
     width: 150px;
   }
 
-  /* ---------- Home slider ---------- */
+  /* ---------- General ---------- */
 
   :root {
     --copy: 0.84rem/1.7 "Lato", sans-serif;
@@ -20,6 +20,11 @@
     --alt: small-caps 0.91rem "Oswald", sans-serif;
     --link: 700 0.84rem "Lato", sans-serif;
     --small: 0.675rem "Lato", sans-serif;
+  }
+
+  /* ---------- Slider ---------- */
+  .layout-slider {
+    min-width: 100%;
   }
 
   /* ---------- List of articles ---------- */

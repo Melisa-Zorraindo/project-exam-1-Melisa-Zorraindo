@@ -39,8 +39,22 @@ h2 {
   width: 90%;
 }
 
+.layout-slider {
+  height: 10rem;
+  min-width: 344px;
+  margin-right: 1rem;
+}
+
+.layout-heading,
 .slider-card h3 {
   margin: 0;
+}
+
+.layout-heading {
+  height: 1.5rem;
+  background-color: var(--decor);
+  margin-bottom: 0.5rem;
+  animation: fade-in-out 2s infinite;
 }
 
 .slider-card {
@@ -51,12 +65,45 @@ h2 {
   padding: 0.25rem;
 }
 
+.layout-img,
 .slider-card img {
   width: 100%;
   height: auto;
 }
 
-.handle {
+.layout-img {
+  height: 6rem;
+  background-color: var(--decor);
+  animation: fade-in-out 2s infinite;
+}
+
+.layout-tag-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.layout-tags {
+  width: 5rem;
+  height: 1.5rem;
+  margin: 0.5rem 0;
+  background-color: var(--decor);
+  animation: fade-in-out 2s infinite;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+/* .handle {
   border: none;
   border-radius: 1rem;
   flex-grow: 0;
@@ -83,9 +130,8 @@ h2 {
 .right-handle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-}
+} */
 
-/*-- my buttons --*/
 .slider-nav {
   margin: 3rem auto;
   gap: 3rem;
@@ -100,6 +146,10 @@ h2 {
   font-size: 2rem;
   background-color: transparent;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
 
 .post-button {
