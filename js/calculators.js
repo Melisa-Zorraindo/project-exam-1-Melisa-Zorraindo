@@ -8,6 +8,7 @@ const genderSelection = document.querySelector("select[name='gender']");
 const ageField = document.querySelector("#age");
 const weightField = document.querySelector("#body-weight");
 const heightField = document.querySelector("#height");
+const heightSelect = document.querySelector("#select-height-ft");
 const activityLevelSelection = document.querySelector(
   "select[name='activity-level']"
 );
@@ -20,12 +21,14 @@ tdeeBtn.addEventListener("click", validateFields);
 //system selection
 metricSystem.addEventListener("change", () => {
   weightField.placeholder = "Weight in KG";
-  heightField.placeholder = "Height in CM";
+  heightField.classList.remove("hidden");
+  heightSelect.classList.add("hidden");
 });
 
 imperialSystem.addEventListener("change", () => {
   weightField.placeholder = "Weight in lbs";
-  heightField.placeholder = "Height in FT";
+  heightSelect.classList.remove("hidden");
+  heightField.classList.add("hidden");
 });
 
 //validate fields
@@ -75,23 +78,23 @@ function validateFields() {
   }
 
   //height
+
+  //if imperial
+  let heightValueInFt = parseFloat(heightSelect.value);
+  if (imperialSystem.checked && !heightValueInFt) {
+    heightSelect.classList.add("error");
+  } else {
+    heightSelect.classList.remove("error");
+  }
+
+  //if metric
   let heightValue = parseFloat(heightField.value);
   const heightError = document.querySelector(".error-height");
 
-  //if imperial
-  if (imperialSystem.checked) {
-    heightValue = parseFloat(ftToCm(heightValue));
-    if (!heightValue || !isValid(heightValue, 4.26, 7.54)) {
-      heightField.classList.add("error");
-      heightError.innerHTML = "must be a number between 4.26 and 7.54";
-      heightError.classList.remove("hidden");
-    } else {
-      heightField.classList.remove("error");
-      heightError.classList.add("hidden");
-    }
-  }
-
-  if (!heightValue || !isValid(heightValue, 130, 230)) {
+  if (
+    metricSystem.checked &&
+    (!heightValue || !isValid(heightValue, 130, 230))
+  ) {
     heightField.classList.add("error");
     heightError.classList.remove("hidden");
   } else {
@@ -173,7 +176,7 @@ function calculateResult() {
   let height = parseFloat(heightField.value);
   if (imperialSystem.checked) {
     weight = parseFloat(lbsToKg(weight));
-    height = parseFloat(ftToCm(height));
+    height = parseFloat(heightSelect.value);
   }
 
   const activity = activityLevelSelection.value;
@@ -193,11 +196,6 @@ function isValid(field, minValue, maxValue) {
 //convert lbs to KG
 function lbsToKg(weightInLbs) {
   return weightInLbs * 0.45359237;
-}
-
-//convert ft to cm
-function ftToCm(heightInFt) {
-  return heightInFt * 30.48;
 }
 
 //create HTML
