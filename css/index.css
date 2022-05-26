@@ -102,6 +102,16 @@ h2 {
   cursor: pointer;
 }
 
+.post-button {
+  margin: 8rem auto 3rem;
+  text-align: center;
+}
+.cta-to-posts {
+  text-decoration: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 /* ---------- While loading ---------- */
 
 .lt-flex-layout {
