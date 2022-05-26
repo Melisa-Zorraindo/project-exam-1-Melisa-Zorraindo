@@ -97,10 +97,38 @@ select,
   flex-direction: column;
 }
 
+/* ---------- Loader TDEE calc ---------- */
+
+.load-calc-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.load-calc {
+  width: 3rem;
+  height: 3rem;
+  border: 0.4rem solid var(--decor);
+  border-bottom-color: var(--focus);
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* ---------- Hover info calc ---------- */
 .info-btn {
   border: none;
   background-color: transparent;
+  position: relative;
 }
 
 .hover-icon {

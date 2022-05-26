@@ -15,6 +15,8 @@ const activityLevelSelection = document.querySelector(
 const goalSelection = document.querySelector("select[name='goal']");
 const tdeeBtn = document.querySelector("#tdee-btn");
 
+const resultsContainer = document.querySelector(".results");
+
 //catch errors in form
 tdeeBtn.addEventListener("click", validateFields);
 
@@ -116,7 +118,7 @@ function validateFields() {
     goalSelection.classList.remove("error");
   }
 
-  calculateResult();
+  displayLoader();
 }
 
 //remove errors on key up
@@ -169,6 +171,7 @@ async function getDailyCalorieIntake(url) {
   }
 }
 
+//calculate tdee
 function calculateResult() {
   const gender = genderSelection.value;
   const age = parseInt(ageField.value);
@@ -187,6 +190,7 @@ function calculateResult() {
   getDailyCalorieIntake(url);
 }
 
+//field validation function
 function isValid(field, minValue, maxValue) {
   if (field >= minValue && field <= maxValue) {
     return true;
@@ -198,10 +202,16 @@ function lbsToKg(weightInLbs) {
   return weightInLbs * 0.45359237;
 }
 
+//loader function
+function displayLoader() {
+  resultsContainer.innerHTML = `<div class="load-calc-box">
+                                  <div class="load-calc"></div>
+                                </div>`;
+  calculateResult();
+}
+
 //create HTML
 function outputResults(data) {
-  const resultsContainer = document.querySelector(".results");
-
   resultsContainer.innerHTML = `<div>
   <span>calories: <span class="result-output" id="kcal-result-output">${parseInt(
     data.data.calorie
