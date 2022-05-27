@@ -90,11 +90,13 @@
             <input type="radio" id="imperial" value="imperial" name="system" />
             <label for="imperial">Imperial</label>
           </div>
+          <label for="gender-select"></label>
           <select name="gender" id="gender-select">
             <option value="">Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
+          <label for="age"></label>
           <input
             class="number-value"
             id="age"
@@ -105,6 +107,7 @@
           <small class="error-message error-age hidden"
             >must be a number between 1 and 80</small
           >
+          <label for="body-weight"></label>
           <input
             class="number-value"
             id="body-weight"
@@ -115,6 +118,7 @@
           <small class="error-message error-weight hidden"
             >must be a number between 40 and 160</small
           >
+          <label for="height"></label>
           <input
             class="number-value"
             id="height"
@@ -125,6 +129,7 @@
           <small class="error-message error-height hidden"
             >must be a number between 130 and 230</small
           >
+          <label for="select-height-ft"></label>
           <select name="height" id="select-height-ft" class="hidden">
             <option value="">Select height</option>
             <option value="130">4 ft 3 in</option>
@@ -168,6 +173,7 @@
             <option value="226.06">7 ft 5 in</option>
             <option value="228.6">7 ft 6 in</option>
           </select>
+          <label for="activity-level"></label>
           <select name="activity-level" id="activity-select">
             <option value="">Select activity level</option>
             <option value="2">Sedentary (office job)</option>
@@ -175,6 +181,7 @@
             <option value="5">Moderate exercise (3/5 days a week)</option>
             <option value="6">Heavy exercise (6/7 days a week)</option>
           </select>
+          <label for="goal-select"></label>
           <select name="goal" id="goal-select">
             <option value="">Select a goal</option>
             <option value="mildlose">Lose weight</option>
@@ -193,6 +200,7 @@
             <div class="lift-values">
               <span class="field-heading">i lifted</span>
               <div>
+                <label for="lifted-weight"></label>
                 <input
                   class="number-value"
                   type="number"
@@ -202,6 +210,7 @@
                 />
                 <sup
                   ><button
+                    aria-label="how to fill in this field"
                     class="info-btn"
                     data-hover="Enter your weight in KG"
                   >
@@ -212,6 +221,7 @@
                 ></sup>
               </div>
               <div>
+                <label for="performed-reps"></label>
                 <input
                   class="number-value"
                   type="number"
@@ -221,6 +231,7 @@
                 />
                 <sup
                   ><button
+                    aria-label="how to fill in this field"
                     class="info-btn"
                     data-hover="Enter number of repetitions achieved"
                   >
@@ -234,6 +245,7 @@
                 >must be a number between 1 and 12</small
               >
               <div>
+                <label for="reached-rpe"></label>
                 <select name="rpe-values" id="reached-rpe">
                   <option value="">RPE</option>
                   <option value="0">10</option>
@@ -247,6 +259,7 @@
                 </select>
                 <sup
                   ><button
+                    aria-label="how to fill in this field"
                     class="info-btn"
                     data-hover="Rate of Perceived Exertion. Runs from 1 to 10, 10 matching your hardest effort. An RPE of 10 means you couldn't have performed any more reps. An RPE of 9 means you had 1 rep left. Etc."
                   >
@@ -261,6 +274,7 @@
             <div class="lift-values">
               <span class="field-heading">i want to lift</span>
               <div>
+                <label for="desired-reps"></label>
                 <input
                   class="number-value"
                   type="text"
@@ -270,6 +284,7 @@
                 />
                 <sup
                   ><button
+                    aria-label="how to fill in this field"
                     class="info-btn"
                     data-hover="Enter number of repetitions you want to perform"
                   >
@@ -283,6 +298,7 @@
                 >must be a number between 1 and 12</small
               >
               <div>
+                <label for="desired-rpe"></label>
                 <select name="desired-rpe-values" id="desired-rpe">
                   <option value="">RPE</option>
                   <option value="0">10</option>
@@ -296,6 +312,7 @@
                 </select>
                 <sup
                   ><button
+                    aria-label="how to fill in this field"
                     class="info-btn"
                     data-hover="Enter RPE at which you want to perform"
                   >
