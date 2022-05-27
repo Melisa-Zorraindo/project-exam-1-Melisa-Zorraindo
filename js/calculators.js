@@ -1,3 +1,4 @@
+import { displayErrorMessage } from "./functions/errorMessage.js";
 // TDEE CALCULATOR
 
 //select elements in the DOM
@@ -173,6 +174,7 @@ async function getDailyCalorieIntake(url) {
     const data = await response.json();
     outputResults(data);
   } catch (error) {
+    displayErrorMessage(resultsContainer);
     console.log(error);
   }
 }

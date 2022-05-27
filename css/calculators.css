@@ -151,3 +151,11 @@ select,
   transform: translateX(-50%);
   z-index: 1;
 }
+
+/* ---------- Error API call ---------- */
+.error-message {
+  margin: auto;
+  width: 100%;
+  border: 1px solid red;
+  text-align: center;
+}
