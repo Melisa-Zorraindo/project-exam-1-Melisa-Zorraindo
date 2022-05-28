@@ -90,12 +90,17 @@
             <input type="radio" id="imperial" value="imperial" name="system" />
             <label for="imperial">Imperial</label>
           </div>
-          <select name="gender" id="gender-select">
+          <select
+            aria-label="select your gender"
+            name="gender"
+            id="gender-select"
+          >
             <option value="">Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
           <input
+            aria-label="enter your age, must be a number between 1 and 80"
             class="number-value"
             id="age"
             value=""
@@ -106,6 +111,7 @@
             >must be a number between 1 and 80</small
           >
           <input
+            aria-label="type your weight in kilograms"
             class="number-value"
             id="body-weight"
             value=""
@@ -116,6 +122,7 @@
             >must be a number between 40 and 160</small
           >
           <input
+            aria-label="type your height in centimetres"
             class="number-value"
             id="height"
             value=""
@@ -125,7 +132,12 @@
           <small class="error-message error-height hidden"
             >must be a number between 130 and 230</small
           >
-          <select name="height" id="select-height-ft" class="hidden">
+          <select
+            aria-label="select your height"
+            name="height"
+            id="select-height-ft"
+            class="hidden"
+          >
             <option value="">Select height</option>
             <option value="130">4 ft 3 in</option>
             <option value="132.08">4 ft 4 in</option>
@@ -168,14 +180,18 @@
             <option value="226.06">7 ft 5 in</option>
             <option value="228.6">7 ft 6 in</option>
           </select>
-          <select name="activity-level" id="activity-select">
+          <select
+            aria-label="select your activity level"
+            name="activity-level"
+            id="activity-select"
+          >
             <option value="">Select activity level</option>
             <option value="2">Sedentary (office job)</option>
             <option value="4">Light exercise (1/2 days a week)</option>
             <option value="5">Moderate exercise (3/5 days a week)</option>
             <option value="6">Heavy exercise (6/7 days a week)</option>
           </select>
-          <select name="goal" id="goal-select">
+          <select aria-label="select your goal" name="goal" id="goal-select">
             <option value="">Select a goal</option>
             <option value="mildlose">Lose weight</option>
             <option value="maintain">Maintain</option>
@@ -194,6 +210,7 @@
               <span class="field-heading">i lifted</span>
               <div>
                 <input
+                  aria-label="type the weight your lifted in kilograms"
                   class="number-value"
                   type="number"
                   value=""
@@ -214,6 +231,7 @@
               </div>
               <div>
                 <input
+                  aria-label="type the number of reps you performed"
                   class="number-value"
                   type="number"
                   value=""
@@ -236,7 +254,11 @@
                 >must be a number between 1 and 12</small
               >
               <div>
-                <select name="rpe-values" id="reached-rpe">
+                <select
+                  aria-label="choose rpe you performed at"
+                  name="rpe-values"
+                  id="reached-rpe"
+                >
                   <option value="">RPE</option>
                   <option value="0">10</option>
                   <option value="1">9.5</option>
@@ -265,6 +287,7 @@
               <span class="field-heading">i want to lift</span>
               <div>
                 <input
+                  aria-label="type the number of reps you want to make"
                   class="number-value"
                   type="text"
                   value=""
@@ -287,7 +310,11 @@
                 >must be a number between 1 and 12</small
               >
               <div>
-                <select name="desired-rpe-values" id="desired-rpe">
+                <select
+                  aria-label="choose the rpe at which you want to perform"
+                  name="desired-rpe-values"
+                  id="desired-rpe"
+                >
                   <option value="">RPE</option>
                   <option value="0">10</option>
                   <option value="1">9.5</option>
