@@ -1,3 +1,4 @@
+import { API_KEY } from "./apikey.js";
 import { displayErrorMessage } from "./functions/errorMessage.js";
 // TDEE CALCULATOR
 
@@ -164,7 +165,7 @@ const options = {
   method: "GET",
   headers: {
     "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com",
-    "X-RapidAPI-Key": "68002b448dmsh13ce8351f6c4cccp1f31f8jsndc4f4f233bf3",
+    "X-RapidAPI-Key": API_KEY,
   },
 };
 
