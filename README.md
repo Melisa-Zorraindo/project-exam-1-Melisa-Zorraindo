@@ -7,8 +7,6 @@ Fitness and nutrition blog
 
 Design and development of a fitness and nutrition blog site. The posts are stored on a WordPress database and are fetched dinamically by calling the WordPress API. The blog has an appealing look, is user-friendly, responsive, and follows WCAG guidelines for accessibility.
 
-## [Link to live project](https://fitfactory-noroff-project.netlify.app/)
-
 ## Site architecture
 
 - Home page
